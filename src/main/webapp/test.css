@@ -1,0 +1,32 @@
+#entirePage{
+	height:100%;
+	width:100%;
+	background:yellow;
+}
+#header{
+	height:20%;
+	width:100%;
+	background:#21618C;
+}
+#body{
+	height:70%;
+	width:100%;
+	background:white;
+}
+#footer{
+	height:10%;
+	width:100%;
+	background:#2874A6 ;
+}
+#filter{
+	height:100%;
+	width:10%;
+	background:#85C1E9;	
+	float:left;
+}
+#display{
+	height:100%;
+	width:90%;
+	background:#D6EAF8;	
+	float:left;
+}
