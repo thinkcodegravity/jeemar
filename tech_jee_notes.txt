@@ -1,0 +1,1771 @@
+internet - network of computers (global) billions
+	wireless - internet cell phone ( Roaming network )
+		phone - cell tower - satalites - cell tower - phone
+	wireline - home internet (Fixed network) (wifi - short range wireless - router/modem)
+		(fiber , copper )
+intranet - closed network , corporate, educational, organization ( 1000 or millions)
+LAN - home network
+
+ip - identify a specific device out of BILLIONs of devices connected to internet
+	IPv4 = IP version 4
+	X.X.X.X = 256 x 256 x 256 x 256 = 4 billion unique numbers
+	X = 0-255 ( 256 possibility)
+	12.34.215.189
+	0.0.0.0
+	255.255.255.255
+	
+	IPv6 = IP version 6 - 32 digit 
+	xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+	x= 0-9 and A-f - 16 possibility 32 = Trillions and trillions
+	02A7:3C29:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+	
+WAN IP : ip assigned to device that are directly connected to internet
+LAN IP : ip assigned to device that are connected to internet service device such as ROUTER
+
+domain name = alias to ip address just like contact name vs phone number
+
+Phone num = Contact person name
+123123123 = Dad
+123435435 = Mom
+345345439 = jane
+123564654 = andy
+
+IP address   = domain name
+123.123.1.3 = www.google.com
+12.56.12.123 = www.facebook.com
+
+https://www.google.com
+www.google.com =123.123.1.3
+https = 443 ( encrypted data )
+http = 80 ( plain data )
+
+http://localhost
+
+port/socket 
+dns  = domain name server . maintains mapping between
+	domain name and ip address
+
+dhcp  - dynamic host configuration protocol
+	assign unique ip address
+
+router - route traffic
+load balancer 
+
+n/w commands
+	ipconfig - show my lan ip address
+	netstat -a - show all ports open
+	ping - remote machine is reachable and response time (round trip time)
+	telnet - website software is open on remote aws machine
+	tracert - find delay in the network (trace route)
+		multiple hops
+	
+
+************* xml *******************
+HTML : Hyper Text Markup Language
+HTTP : Hyper Text Transfer Protocol
+browser
+
+XML  : Extensible Markup Language
+	data structure format
+
+<customer>
+	<name>john</name>
+	<product>
+		<pname>iphone</pname>
+	</product>
+</customer>
+
+
+elements = tags on information. meta-data.. element is meta and value is data
+	<name>john</name>... what is john ? name.... john is data
+root = customer element
+parent = Customer is parent of name and product.. Product is parent of pname
+child = name and product are child of Customer... pname is child of product
+sibling = name and product are siblings
+value = data between any opening and closing tag
+Attribute - simple info stored as key-value pair , in an opening tag
+
+
+customer information - fname, lname, email,phone, credit, address
+
+when dealing with complex information = divide the sub information into child elements
+when dealing with simple info= create this as an key value pair ATTRIBUTE
+
+XML Parsing
+ <a href="/access">Welcome to Amazon.com. </a>
+  
+  a opening closing tag
+  a is an ELEMENT 
+  href is an ATTRIBUTE of a elemnt
+  "welcome to amazon.com" is VALUE of a element
+******************** PROJECT SETUP and DEV activity **************
+
+1) writing the code in editor - Development
+2) Launching our website - website becomes online and can be accessed using browser.
+	locally in your laptop : only you can see the website
+		right click on project in eclipse/STS >>> run-as >>> java application
+	on internet : entire world can see your website (AWS)
+3) testing
+	locally in your laptop : only you can see the website
+		open browser > type localhost
+	on internet : entire world can see your website (AWS)
+
+code change(development)
+launch website
+test website
+
+code change(development)
+Restart website
+	shutdown website
+	launch website
+test website
+
+code change(development)
+shutdown website
+launch website
+test website
+
+*************************************
+  
+  
+html
+	Text , division, take input , interactive elements
+
+CSS - cascading style sheet
+	dimension
+	color
+	text size style
+	
+
+
+
+
+********* html *******
+Browser - 
+	communicates over http on the internet. (sends request to  AWS machine and receive html code as response)
+	Convert html code into Graphical and textual display on the screen
+	
+	Text - Html code 
+	Grapics - CSS programs 
+	layout - CSS programs
+************* event listener **********
+
+events : activity triggered by customer actions
+	standard inputs : 
+		keyboard - type, press, release
+		mouse - move mouse, click, double click
+events listeners : 
+	css : 
+		hover - mouse positioned over certain html eleemnts
+		active - on click of focus of certain html elements
+
+
+margin and padding- spacing between html elements
+
+********** javascript **********
+JAVA VERSUS JAVASCRIPT OBJECT
+
+Javascript Object
+var student={
+		name : "john",
+		age : 10,
+		grade : 2,
+		learn : function(  ){
+			console.log("attending class");
+		}
+		
+	};
+console.log(student.name);
+student.learn();
+	
+Java Object
+public class student{
+	String name = "john";
+	int age=10;
+	int grade =2;
+	public void learn(){
+		System.out.println("attending class");
+	}
+}
+
+onkeypress
+
+
+
+********* CONTROL PASS FROM HTML TO JAVASCRIPT ***********
+Using event listeners in html field you can call javascript functions
+
+
+********* HOW TO ACCESS HTML VALUES FROM JAVASCRIPT *******
+document.getElementById(" id attribute in target html field") . value
+
+
+
+
+
+
+
+****************** jquery *****************
+html + javascript - tightly coupled
+	event listeners in html code
+	onclick, onblur = invoke javascript functions
+	
+	cons : developers working on HTML and javascript
+	
+html + jquery  - loosely coupled
+	no javascript code written in HTML program
+	decoupled - html and javascript
+	
+	
+<div id="parent">
+	<div id="son"> hi hello </div>
+<div>
+
+$("#parent").html(); = html elements
+$("#son").text(); =  hi hello (not elements)
+$("#user").val(); = access customer typed
+					value
+					
+	overloaded
+	no parameter - READING values
+	val()
+	with parameter - WRITING values
+	val("hi");
+	
+	
+	
+document.getElementById( "user")
+$("#user")
+	
+*********************** Http ********************
+Hyper link
+HTML - Hyper Text Markup language
+
+HTTP - Hyper Text Transfer protocol
+FTP - File Transfer protocol
+SMTP - Simple Mail transfer protocol
+
+UPS/USPS/Fedex
+
+HTTP - Transporting/ courier service to move digital data over the internet
+	digital data - 
+		Text - alphabetical/numerical data
+		binary - image/ video/ audio/ executable files 
+
+Http 
+	Header - Digital data transfer informatino - source/destincation/ weight
+			content type/ additional instructions etc
+	Body- digital payload . text data or binary data such as image/video/ etc
+	
+	1 Http Transaction 
+	Request - Client program sends request.
+			Clients side technology - HTML/ JS/ Mobile app
+	Response - Server program responds
+	
+	HTTP methods
+		get - 
+		post - 
+		
+	
+**************** Data transfer / request generation from client **********
+
+	synchronous - customer voluntary submission from customer browser to server
+			clicking SUBMIT button
+			
+		BROWSER DOES ALL THIS	
+			1) Current page - domain name = http://localhost
+			2) form action - part of url = /login
+			3) Inside form element all name attributes and customer input is paired
+				user=john123&pwd=abc123
+				
+			1+2+?+3 = url 
+			http://localhost/login?user=john123&pwd=abc123
+			http://localhost/login?user=john123&pwd=abc123
+			
+			
+	http://localhost/login?user=john123&pwd=abc123
+	http = port in the website machine (80)
+	localhost = machine location (ip address of website machine)		
+	/login = alias to java program
+	
+			
+	asynchronous - automated involunatry data submission from customer browser to server
+			Event listenter / javascript / ajax
+			
+	ajax= asynchronous Java script xml
+	
+	xhr = xml http request
+	
+	<div id="division1">i am in division 1</div>
+<div id="division2">
+	<input type="text"></input>
+</div>
+<input id="userid" type="text"></input>
+
+READING
+$("#division1").text() = i am in division 1
+$("#division2").html() =  <input type="text"></input>  
+$("#userid").val() = customer typed value from userid text box
+
+WRITING
+$("#division1").text("this is the new division1 text");
+$("#division2").html("<img src='logo.png'/>");
+$("#userid").val("") write in the text box
+
+simple data
+	userid=john
+	pwd=john123
+
+complex data
+	address=adsads wrewr weadad adssadas rretert 123 12345
+
+	<addressInfo>
+		<street>adsads wrewr</street>
+		<city>weadad adssadas</city>
+		<state>retertreter</state>
+		<zip>123</zip>
+		<phone>12345</phone>
+	</addressInfo>
+	
+	JavaScript Object Notation = String representation of java script object
+	JSON complex data .... as an alternative for xml data transfer
+	var addressInfo={
+		"street":"adsads wrewr",
+		"city":"weadad adssadas",
+		"state":"rretert",
+		"zip":123,
+		"phone":12345,
+		"weight":123.5,
+		"active":true
+	};		
+	
+	Convert JSON to javaScript Object then read / write json content
+		var addressInfoJSObject=JSON.parse(addressInfo);
+		console.log(  addressInfoJSObject.zip  );
+		addressInfoJSObject.weight=155.4;
+
+	
+	
+	Javascript objects
+	var addressInfo={
+		street:"adsads wrewr",
+		city:"weadad adssadas",
+		state:"rretert",
+		zip:123,
+		phone:12345
+	};	
+	console.log(   addressInfo.zip ); // reading zip
+	addressInfo.phone=23334; // changing phone
+	
+	public class address{
+		String state="ny";
+	}
+	address add=new address();
+	sysout(add.state);
+	add.state="nj";
+	
+	Jquery has a method to make ajax calls = ".ajax"
+	input to this .ajax method = javascript object
+	javscript object has = variable and methods
+		variable
+			url :  "http://localhost/login" destination where you want to transfer(mandatory)
+			type : "get/post"			method/mode of transfer
+			data :  "user=john123&pwd=abc123" payload, data/content to be transferred
+	
+			success : code executed if the asynch call is successfull
+			error : code executed if the asynch call is failure
+			
+	var loginAttemptCheck={
+	        url: '/shoeInterest',
+	        type: 'get',
+		data : "userid=john&pwd=john1!",
+	        context: this,
+		success: function (data) {
+				if your call to server succeeds.. what to do next
+		        },
+	        error: function (data) {
+	        	if your call to server fails.. what to do next
+	        }
+	};
+	
+	$.ajax(  loginAttemptCheck  );
+	
+********************** JSON ******************
+
+limitation in browser submit server call
+	Key=value pair (simple data)
+	address=adasdsad asdsad asda adssa dasdasdas
+	
+ajax server call
+	key=value
+	xml = complex data
+	<address>
+		<street>asdassad
+		<city>asdad
+		<state>sadad
+		<country>asdasd
+	</address>
+		
+JSON - transfer complex data between client and server
+	json object = (String version/representation of javascript object)
+	var jsonObj="address" : {
+		"street": "asdassad",
+		"city":true,
+		"state":123,
+		"country":"asdasd",
+		"phone": [ 123123123,2342342342   ]
+	}
+	var jsobj=JSON.parse(jsonObj);( CONVERTS JSON OBJECT INTO JAVASCRIPT OBJECT)
+	
+	javascript object
+	var jsobj=address : {
+		street: "asdassad",
+		city:true,
+		state:123,
+		country:"asdasd",
+		phone: [ 123123123,2342342342   ]
+	}
+	var jsonObj=JSON.stringify(jsobj); ( CONVERTS JAVSCRIPT OBJECT INTO JSON OBJECT)
+	
+	
+	
+*************** servlet **************
+
+http : get v/s post
+
+Servlet life cycle
+
+Who creates servlet java object = Tomcat web server software
+Who calls doGet or doPost = doService method in the servlet
+Who gives request / response object = tomcat creates req/res object gives it to service method
+			service method gives it to doget or dopost methods
+Customer John trying to login
+Tomcat container - web server software
+	look for matching java program for "\login"
+	found LoginServlet for \login
+	LoginServlet ls=new LoginServlet();
+	ls.init();
+	ls.service();
+	
+Customer Jane trying to login	
+Tomcat container - web server software
+	look for matching java program for "\login"
+	found LoginServlet for \login
+	ls.service();
+Tomcat - Web server software
+
+Spring boot war file includes - html/css/js/java/tomcat programs
+
+Servlet
+	init - override is optional ( called only once when servlet object is created)
+		program setup or initialization code is written here
+	doGet - override is mandatory
+	doPost - override is mandatory
+	doService - override NEVER
+		every time a request comes to your servlet
+	destroy - override is optional server shuts down ( servlet object is destroyed )
+
+Response type category
+	webpage
+		redirect
+		forward
+	text/binary : text message, image, video
+		response.getWriter - text response (Character/text stream)
+		response.getoutputstream  - image/video ( binary stream)
+	
+Http Sessions
+	HTTP is a stateless protocol 
+	State - context of converstation between 2 party
+	get Customer session = req.getSession()
+	read information stored in customer session= getAttribute()
+	write information in customer sesssion = setAttribute(name,value);
+		Session table = key / value pair.. key is String.. value can be any Object(primtive/complex objects)
+			String = 123/true/arraylist/String
+	
+status code
+	200 : request succesfull.
+	3XX : request redirect
+	4XX : CLIENT side problem request not available/unauthorized
+	5XX : server had a problem ( server program had error/exception)
+	
+	
+**************************************** Database **************************************** 
+
+database schema
+
+SQL - Structured Query Language
+	DDL  : Data definition language - Create/alter/delete Tables
+		Create : create tables and database
+		Alter : modify existing table... Delete and add new column
+		Drop : Delete entire table
+		Truncate : Delete all records in the table ( DOES NOT DELETE TABLE)
+	
+	DML : Data Manipulation language : Create update read and delete Records from the table
+	
+
+
+
+Database queries
+JDBC
+SOAP webservice
+Rest webservice
+Microservice
+
+9 - 3/5
+
+% = 0 or more(ANY Characters)
+
+abcdqwe
+qweqw
+zcxzxc
+qwea
+
+
+%we%
+
+
+insert - output integer ( Number of rows  that were inserted)
+update - output integer ( Number of rows  that were updated)
+delete  - output integer ( Number of rows  that were deleted)
+select - output is table display
+
+Select = where condition to filter from all records
+insert = number of columns and number of values should match	
+	insert into customers(userid,password,firstname,lastname,
+	gender,email,phonenumber)
+	values
+	('abc','jee1','jee','doe','male','jee@g.com','2222')
+delete = ALWAYS write with where 
+update = ALWAYS write with where 
+
+
+************* JDBC ************
+Workbench -
+	1) DB connection configuration
+	choose DB - "use training"
+	2) prepare query - ( prepared statement with ? )
+		select * from users where userid=?
+	3) set input to query (Dynamic binding)
+		select * from users where userid='jane';
+	4) execute query
+		click lightneing symbol
+		insert = executeUpdate... output is int
+		update = executeUpdate... output is int
+		delete = executeUpdate... output is int
+		select = executeQuery.... output is ResultSet
+	5) read results
+		read results using ResultSet object
+		
+Database software : internet/network based software located
+	by IP and Port
+	
+JDBC Client 
+	1) Mysql workbench
+	2) JDBC api
+
+Steps to interact with database server software
+	1) establish Connection :
+		IP
+		Port
+		Userid
+		Password
+		Database schema
+	
+Internet/network based software
+are located by IP and port
+
+Phone : apple,samsung,moto
+Laptop : mac, windows, chrome
+Database software : Mysql, oracle, postgres, Microst SQL server
+
+drivers : software allows you device(laptop) 
+	to communicate with new device/product
+	(printers , mouse,keyboard)
+OLTP : OnLine Transaction Processing
+	ALL or NOTHING
+// establish connection object
+Connection conn;
+try{
+	conn.setAutoCommit(false); // any successfull query execution is always temp until commit line
+	// execute queries
+	success : update warehouse table with latest stock - 100 to 95 ( Temprory)
+	failure : insert new order in csutomerorder table - mike customer order
+	conn.commit(); // permanently save all above temp DB change
+}catch(Exception e){
+	conn.rollback(); // all temp succesfull changes will be reverted/rollback
+}
+finally{
+	conn.close();
+}
+
+
+HOW to execute query on Database software
+	(CreateStatement) : Static query - select * from customer where userid='john'
+	(PrepareStatement) : Dynamic query - select * from customer where userid=?
+	(PrepareCall) Stored procedure - SQL programming method ( PL SQL programmers )
+	
+	
+	
+	
+Java method
+	return type    method name parameter
+	{
+		logic.... if / while/ local variable
+	}
+	
+	below DML are making changes to the table
+		insert/update/delete = PrepareStatement . executeUpdate();
+	Read only queries
+		select = PrepareStaement.executeQuery();
+
+
+
+JDBC code for interaction with Database
+
+UserTable.java
+	160 lines of JDBC coding : 4 methods.. insert/update/delete/select
+
+
+Spring data framework for interation with database
+	insert into users (userid,password) values ( :uid,:pwd )
+	public int registerUser(String uid,String pwd) 
+    
+	update users set password=:pwd where userid=:uid
+	public int updatePwd(String uid,String pwd) 
+    
+	delete from users where userid=:delUid
+	public int deleteUser(String delUid)
+    
+	select userid from users where userid =:userid and password=:pwd
+	public User validateLogin(String userid,String pwd) 
+        
+	
+*********** webservice ***************
+
+WSDL : Web Service Description Language 
+	neutral/language independant
+	explaination of your webservice
+	written in XML
+	
+	1) endpoint /URL of the webservice : Port/Address in wsdl
+	2) methods/services in this webservice url : operations in wsdl
+	3) input required : schema ... complex, sequences. input in wsdl
+	4) output expected
+	
+	
+Soap implementation class : webservice provider program
+	program that has the logic/code of webservice.
+	@webservice
+	
+Soap stub class : webservice consumer program
+
+input/output : primitive data type or string (choose RPC)
+input/output : complex data type arraylist, Student (choose Document)
+
+
+RPC ; cannot be validated( does not include schema in wsdl file)
+Document ; can be validated (include schema in wsdl file)
+
+Schema in wsdl file are responsible for VALIDATIONS
+	
+	
+Document
+	literal : schema includes only input/output data type
+	literal wrapped : schema includes input/output data type AND OPERATION name
+	
+	Soap document : literal wrapped
+	public class calculator
+		public int add(int a, int b)
+		public int sub(int a, int b)
+	
+	Soap document : literal 
+	public class calculator
+		public int add(int a, int b)
+		public int add(int a, int b,int c)
+	
+	
+1) simple program
+2) write @webservice on top of the program
+3) input/output  - complex data as in arraylist, student ( style =Document)
+	input/output  - simple data as in primitive-int/boolean , string ( style =RPC)
+4) validation needed : Document
+5) if webservice program has overloaded method - Document Literal
+	if webservice program has multiple method with same signature - Document LiteralWrapped
+
+Http Server Program : Servlets , Soap Webservice, Rest Web service, Struts Action 
+	Server program are typically mapped to a URL
+	Servlets  - @WebServlet("/login")
+	Soap WebService - Endpoint.publish maps http url
+	Rest Webservice - 
+		every method in the program is mapped to a http url
+		@RequestMapping
+
+@WebServlet - Server program of type Servlet
+@WebService - Server program of type Soap Webservice
+@RestController - Server program of type Rest Webservice
+
+	
+Soap UI - Http Client : Used for testing Soap webserive , Rest webservice for Get/Post methods
+Postman - Http Client : Used for testing Soap/Rest webservice for all http methods (Get/post/put etc)
+Browser - Http Client : Used for testing HTML/Rest - Get webservice.
+RestTemplate - Http Client : Java http client program that can consume Rest webservice (get and post)
+
+Rest Webservice :
+
+	Input to this webservice can be
+		Http GET : 
+			Path param : http://ip:port/servicename/10/20
+			Request param : http://ip:port/servicename?input1=10&input2=20
+		
+		Http POST : 
+			JSON input :
+	Output from this webservice can be
+		JSON, text, xml etc
+		
+		
+
+Rest Get method implementation
+
+@RestController
+public class calculator{
+	
+	//	http://ip:port/servicename/10/20
+	// servicename=addCal
+	// 
+	@RequestMapping(value = "/addCal/{param1}/{param2}", method = RequestMethod.GET)
+	public int add(
+		@PathVariable(name="param1") int a,
+		@PathVariable(name="param2") int b) throws Exception {
+		return a+b;
+	}
+	
+	// http://ip:port/servicename?param1=10&param2=50
+	@RequestMapping(value = "/subCal", method = RequestMethod.GET)
+	public int sub(@RequestParam("param1")  int a,@RequestParam("param2")  int b) throws Exception {
+		return a-b;
+	}
+	
+	
+}
+
+HOW DO YOU WRITE REST WEBSERVICE THAT CAN RECEIVE INPUT AS JSON STRING
+
+1) provide a url service name for the method = @RequestMapping(value = "/jsonReqMul"
+2) Create Rest webmethod with post (method = RequestMethod.POST)
+3) declare that it consumes JSON ( consumes = MediaType.APPLICATION_JSON_VALUE)
+4) input to this method will be received in body (@RequestBody  in the parameter)
+5) Create Java program that is JSON input compliant ( parameter to your method)
+	{
+		"a":10,
+		"b":20
+	}
+
+	public class abcd{
+		int a;
+		int b;
+		// get set methods for above variables
+	
+	}
+
+HOW DO YOU WRITE REST WEBSERVICE THAT CAN RETURN OUTPUT AS JSON STRING
+
+1) provide a url service name for the method = @RequestMapping(value = "/jsonReqMul"
+2) Use any suitable input (get or post)
+3) declare that it return JSON ( produce = MediaType.APPLICATION_JSON_VALUE)
+4) Create Java program that is JSON Ouput compliant ( parameter to your method)
+	{
+		"a":10,
+		"b":20
+	}
+
+	public class abcd{
+		int a;
+		int b;
+		// get set methods for above variables
+	
+	}
+	
+	
+JSON Mapper programs - Convert JSON string into java object
+					Convert Java object into JSON string
+					
+					
+					
+MICROSERVICES : REST + JSON
+
+AA SOAP webservice
+
+Expedia xml input to AA Soap webservice
+
+<GetFlightPlan>				
+	<source>	ny	</source>	
+	<destination>	chicago	<destination>	
+</GetFlightPlan>				
+
+
+AA xml output from soap webservice
+<FlightDetails>				
+	<flights>AA123</flights>
+	<flights>AA456</flights>
+</FlightDetails>	
+
+Rest
+	Input :
+		path input = http://aa.com/getFlights/ny/chicgo
+		query Input = http://aa.com/getFlights?source=ny&destination=chicago
+		xml input =
+			<GetFlightPlan>				
+				<source>	ny	</source>	
+				<destination>	chicago	<destination>	
+			</GetFlightPlan>	
+		json input =
+			{
+				"source":"ny",
+				"destination":"chicago"
+			}
+	
+	Output :
+			plain text : AA123
+			xml :
+				<FlightDetails>				
+					<flights>AA123</flights>
+					<flights>AA456</flights>
+				</FlightDetails>
+			json : 
+				{
+					"flight":[ "AA123","AA456"]
+				}
+				
+				
+				
+{
+	"firstName":"john",
+	"lastName":"doe",
+	"age":10
+}	
+	
+Create java program that represents JSON input
+
+public class Person{
+	String firstName;
+	String lastName;
+	int age;
+	// get set method for above variable
+}
+
+
+{
+	"principal":100000,
+	"time":12,
+	"rate":3
+}
+
+Transfering data from JSON to Java object - JSONMapper program
+	SimpleInterest si=new SimpleInterest();
+	si.principal=100000;
+	si.time=12;
+	si.rate=3;
+public class SimpleInterest{
+	int principal;
+	int time;
+	int rate;
+}
+
+
+
+
+http://localhost/allMath/10/20
+{
+	"add":30,
+	"sub":-10,
+	"mul":200,
+	"div":0
+}
+
+public class Output{
+	int add;
+	int sub;
+	int mul;
+	int div;
+	// get set methods
+}
+
+
+
+
+
+
+******************** SWAGGER *****************************
+
+Rest webservice documentation library
+
+1) endpoint /URL of the webservice : 
+2) methods/services in this webservice url : 
+3) input required : 
+4) output expected
+
+
+************ Rest Java Client *******************
+
+
+	
+Soap Stub programs = ONLY XML
+1) internet Connection to the webservice program using HTTP
+2) Data conversion
+	<add>
+		<input1>10</input1>
+		<input2>10</input2>
+	</add>
+	add(10,10);
+
+
+Rest Stub programs
+1) internet Connection to the webservice program using "HTTP URL"
+2) Data conversion
+	add/10/20
+	add(10,20)
+	
+	<add>
+		<input1>10</input1>
+		<input2>10</input2>
+	</add>
+	add(10,10);
+	
+	{
+		"input1":30,
+		"input2":20
+	}
+	add(30,20);
+	
+	
+
+	
+	
+	
+	
+	Rest Webservice (publish)
+	GET
+		path input = localhost/add/10/20
+		query input = localhost/sub?input1=10&input2=5
+	POST
+		Json input = localhost/simpleinterest
+				{ "principal":10000,"rate":3,"term":20}
+				
+		JSON Output= localhost/addJson/10/20
+				output
+				{
+					"add":30,
+					"sub":-10,
+					"mul":200,
+					"div":0
+				}
+Rest werbservice (consume)
+	GET
+		path input = http://localhost:6060/areaOfSquare/5 (browser)
+			RestTemplate square=new RestTemplate(); // Rest stub program
+			int res=square.getForObject("http://localhost:6060/areaOfSquare/5", Integer.class);
+			// innput 1 : webservice http url
+			// input 2 : output expected ?
+				
+				
+		query input = http://localhost:6060/subCal?param1=10&param2=5 (browser)
+			RestTemplate sub=new RestTemplate(); // Rest stub program
+			int res=sub.getForObject("http://localhost:6060/subCal?param1=10&param2=5", Integer.class);
+				
+	POST
+		Json input = http://localhost:6060/calSI (postman)
+				{	"principal":10000,	"time":30,	"rate":4 }
+			
+			// create java program for json input
+			public class SI{
+				int principal;
+				int time;
+				int rate;
+				// get/set methods
+			}				
+			
+		RestTemplate postTest=new RestTemplate();
+		SI input=new SI();
+		input.principal=10000; 
+		input.time=30;
+		input.rate=4;
+		// {	"principal":10000,	"time":30,	"rate":4 }
+		int res=postTest.postForObject
+				("http://localhost:6060/calSI",
+				input,
+				Integer.class);
+	
+
+				
+		JSON Output= http://localhost:6060/allMath/10/5 (browser)
+				{
+				    "sum": 15,
+				    "sub": 5,
+				    "mul": 50,
+				    "div": 2
+				}
+			public class JSONOutput{
+				int sum;
+				int sub;
+				int mul;
+				int div;
+				//get set methods
+			}
+			RestTemplate square=new RestTemplate(); // Rest stub program
+			JSONOutput res=square.getForObject("http://localhost:6060/allMath/10/5", JSONOutput.class );
+			
+
+
+********************* struts framework ****************************************
+
+Strut : MVC architecture
+
+	Struts configuration
+	1) add strut dependancy in pom.xml
+	2) configure strut prepare and execute filter in the main application java
+	3) src/main/resources = create file called struts.xml
+	
+Struts framework
+	struts.xml - Controller
+	action java programs - model program
+	
+setup struts in the project
+	1) pom.xml - include all struts dependancy
+	2) include struts.xml in src/main/resources
+	3) include struts filter configuration method in the 
+		main program ( java file ending with name Application)
+
+View		    > controller  > Model
+teststrut.html > struts.xml > action program
+
+Servlet responsibilities :
+	1) URL mapping : @Webservlet
+	2) Request processing : request.getParameter
+	3) business logic handling 
+	4) Response generation : 
+		webpage
+			redirect "res.sendRedirect", 
+			forward "req dispatcher fwd",
+		text "res.getWriter", 
+		binary "res.getoutputstream"
+
+
+Servlet to strut upgrade:
+	1) URL mapping : in struts.xml create action element
+		map url to a class and method
+		<action name="test1"  class="com.strut.ProfileAction" method="testing2">
+		http://localhost/test1 - send request to ProfileAction program and testing2 method
+	2) Request processing
+		if html has textbox named abc
+		in action program create String variable abc... get/set methods
+	3) business logic handling 
+		written inside chosen action program method
+	4) Response generation
+		based upon action method string resopnse... configure appropriate response
+		in struts.xml
+		
+Struts.xml
+	URL mapping : http url is linked to Struts program and its method
+	Response : based upon string response from strut program method, u can
+		return redirect html or forward html or text or json etc
+		
+Strut Action progam
+	Form Bean - bean is program global variable and correspinding get/set methods.
+		Request input gathering : HTML page customers input is gathered in this programs
+		form bean section.
+	Action method
+		Business logic written here.
+		
+		
+Servlet responsibilities :
+	1) HTTP URL mapping : @Webservlet
+	2) Request processing : request.getParameter
+		collecting customer typed value
+	3) business logic handling 
+		code 
+	4) Response generation : 
+		webpage
+			redirect "res.sendRedirect", 
+			forward "req dispatcher fwd",
+		text "res.getWriter", 
+		binary "res.getoutputstream"
+
+Strut Framework : ENFORCES MVC architecture
+	Model - business logic	  (JAVA)
+	View - webpage		  (HTML)
+	Controller - Control http url (XML)
+De-coupled architecture
+
+	View = login webpage			(HTML)
+	model+controller = servlet program	(JAVA)
+
+		
+java bean program = simple java program with variables and get/set method for those
+				variable
+	
+	
+View		    > controller  > Model (confidential/propritray)
+teststrut.html > struts.xml > action program
+
+teststrut.html > struts.xml > strut interceptor X action program
+	interceptor - logging, security, performance
+	
+	Jsp - Java server pages
+		HTML + Java
+		
+	Html - static webpage
+	JSP - dynamic webpage
+	
+		
+Strut tag libraries
+	Input flow : webpage (submit) > Strut.xml > Action program bean variables
+	Output flow : Action program bean variables > Strut.xml > webpage (STRUT TAG LIBRARY)
+	Types : 
+		control
+		data
+		ui
+
+***************** jsp and strut tag library *************
+JSP code
+
+<%@ page import="java.util.*" %> 
+	<html> // html code
+		<body>  // html code
+			<% // java code
+				String fname=session.getAttribute(“firstname”);//accessing http session variable like servlet
+				String lname=session.getAttribute(“lastname”);//accessing http session variable like servlet
+			%> // java code
+		Welcome // html code
+		<%= fname%> <%= lname%> // java code
+</body> // html code
+ </html> // html code
+ 
+ 
+ Java code versus strut tag library in JSP web pages
+
+<s:if test="%{false}">    <div>control 1</div> </s:if>
+<s:elseif test="%{true}">  <div>Control 2</div> </s:elseif>
+<s:else>     <div>Control 3</div>   </s:else>
+
+<% if( 10 > 12 ) {
+	%>
+		<div>control 1</div> 
+	<%
+	}
+	else if (10 > 13){
+	%>
+		<div>control 2</div> 
+	<%
+	}	
+	else {
+	%>
+		<div>control 3</div> 
+	<%
+	}
+	
+	
+	// read collection appendedLists in struts tag libbrary
+	<s:iterator value="%{#appendedLists}">  
+	  <li>
+		  <s:property />    
+	  </li>
+	</s:iterator>
+	
+	// read collection appendedLists in jsp , java code
+	<%
+	Iterator appendedLists=mango  apple bana tomo potato onino
+	while(appendedLists.hasNext()){
+		String s= appendedLists.next();
+		%>
+		 <li>
+		  	<%= s %>
+		 </li>
+		<%
+	}
+	%>
+		
+	
+	<s:iterator value="%{#appendedLists}">  
+	  <li>
+		  <s:property />    
+	  </li>
+	</s:iterator>
+	
+************************ spring **********
+
+Frameworks : 
+	architecutre
+	proven solution
+	
+Web server : Tomcat - servlet container
+Application server : Enterprise server - weblogic, websphere
+		Servlet container + EJB container
+		
+small/medium/enterprise
+	
+*******Dependency Injection and Aspect Oriented Programming******
+
+
+Spring boot : Project setup.
+	include dependancies
+	build and packaging = entire website into a single installer file
+	web server software = tomcat
+Spring framework
+	architectural like struts, log, db
+	
+Framework = proven solution for a known category of problem
+	
+framework of frameworks
+
+IOC or DI : Inversion Of Control, Dependancy Injection
+	HAS-A attribute ( Global variable in a class)
+@Scope("session")
+public class Car{
+		@Autowired
+		String cart;
+		@Autowired  // DI or IOC
+		Engine e;
+		@Autowired
+		ISeat s;
+		@Autowired
+		ICar ic;
+	}
+	Car HAS-A Engine
+	Car is DEPENDED on Engine
+	DI = Initializing Dependancy in program
+
+Searching compatible Complete class Object
+Passing initialization paramters to the construtor
+Managing life cycle of the object
+
+	abstract
+Public interface ICar{
+	public void drive();
+}
+public class Nissan implement ICar{
+	public void drive(){
+		sysout("ecomony driving");
+	}
+}
+
+	
+AOP : Aspect Oriented Programming
+
+
+
+
+
+
+
+public class Car{
+	// loose coupled
+	// tightly coupled
+	// spring framework will initialize this oject.. DEPENDANCY INJECTION
+	Engine engine;
+	
+	public void drive(){
+		engine.on();
+	}
+}
+
+Engine > economyEngine > superTurboEngine
+Engine engine=new Engine();
+Engine engine=new economyEngine ();
+Engine engine=new superTurboEngine();
+
+Car is depended on Engine
+Dependancy are global variable in the program
+HAS-A attributes - dependancy
+
+Dependancy injection ? 
+	creating/initializing object of global variables
+	additional features (additional codes) to your class
+		JDBC code
+		webservices code
+		
+		
+		
+		
+		
+		
+		
+ASPECTS
+
+Aspects : cross cutting concern. These are additional lines of code (security,logging, exce,perf,validation) required by your company 
+that are NOT DIRECTLY related to the logic
+Core business logic
+public void login(String userid, String password){
+	
+//1) logging	
+	// print userid in console, so if this customer has any issue. you can check the print statement in your console.
+// 2) security
+	// block certain users
+// 3) exception handling
+// 4) performance check - 3 second tolerance
+// 5) validation
+	if(userid=="jane" && password=="jane1!")
+		sysout("succesfull login");
+	else
+		sysout("login failed");
+}
+
+
+public void login(String userid, String password){
+	if(userid=="jane" && password=="jane1!")
+		sysout("succesfull login");
+	else
+		sysout("login failed");
+}
+
+
+public void register(String userid, String password){
+		/// REGISTERING CUSTOMER CODE
+		
+}
+
+public void payment(String userid, String password){
+		/// REGISTERING CUSTOMER CODE
+		
+}
+xml = configuration
+annotation = configuration
+
+1) configure spring dependancy in pom.xml
+2) in main program include springbootapplication and component scan annotation
+	Note package names of any class that has below @
+	mention these package names in component scan
+	
+	
+Spring annotation
+	@configuration
+	@component
+		@controller = 
+			@RestController
+				Associate HTTP url to a program
+				converting json String to java object
+				extracting all the input from http url
+				construtcing http response to the customerfrom your java object
+				
+		@service
+			Session management
+			request management
+			singleton 
+		@repository
+			Database connection
+			creating queries
+			setting dynamic binding
+			reading results from your query
+			
+	@aspect
+	
+	Engine e=new Engine();
+	
+	Scope
+		Singelton : 1 object of this program is created.. this will be shared by entire
+				company customer
+		Session : 1 Object per customer login session
+		Request : 1 Object per customer request
+		prototype : 1 Object per call
+	public class websiteAspect{
+	@Around
+	within(com.amazon..*) // apply to entire class or even packages
+	public void extraCode(){
+		sysout("extra code 1");		
+		sdfsdf
+		sdfsdf
+		sdf
+		
+		joinPoint.proceed();// give control to bean class
+		sysout("extra code 2");
+	}
+}
+package com.amazon.loginpage;
+public class website{
+	public void login (String userid,String pwd){
+		sysout("login");
+	}
+	public boolean changepassword(String userid,String newpwd){
+		sysout("change");
+		return true;
+	}
+	public int register(String userid,String pwd,String phone,String email){
+		sysout("register");
+		return 1;
+	}
+}
+website.login("john","john1!"); //  print extra code 1... print login.... print extra code 2
+
+package com.amazon.loginpage;
+public class updateProfile{
+	public void changePhone(String userid,String pwd){
+		
+	}
+	public boolean changeEmail(String userid){
+		
+	}
+}
+package com.amazon.shoppingPage;
+public class website{
+	public void add2Cart(String item){
+		
+	}
+	public boolean checkout(String userid){
+		
+	}
+	public int payment(String creditcard){
+		
+	}
+}
+
+public class programA{
+	
+}
+
+@Service
+@component
+@Repository
+public class programB{
+	
+}
+
+public class programC{
+	
+	ProgramA pa=new ProgramA();
+	
+	@Autowired
+	ProgramB pb;
+}
+
+
+public interface ICar{
+	public void drive();
+}
+public class Nissan implements ICar{
+	public void drive(){
+		sysout("economy drivein");
+	}
+}
+
+@autowired
+ICar ic;
+
+
+@Configuration
+public class ConfigCar {
+
+	@Bean(name="ni")
+	public Nissan getNis()
+	{
+		return new Nissan();
+	}
+	@Bean(name="fe")
+	public Toyota getTo()
+	{
+		return new ferrari();
+	}
+}
+
+
+
+Dependancy injection
+	1) If your program is depended on SPring program (@componet/service/repo/config/aspect)
+	2) Create and declare global vriable to the spring program 
+	3) annotate this variable with @autowired
+	4) NEVER INITIALIZE THESE SPRING OBJECT
+	
+	
+parent interface ICar
+child	Nissan
+child Toyota
+
+@Autowired = spring framework create object
+ICar ic;
+
+
+
+******* spring aspects **********
+Spring aspects : cross cutting concerns.. additional
+	code unreleated to core business logic, but
+	required for managing, debugging,running
+	a website successfully.
+	
+	package com.amazon.pqr;
+	public class ProfileUser{
+		10 methods
+	}
+	package com.amazon.pqr;
+	public class Shopping{
+		20 methods
+	}
+	package com.amazon.abcd;
+	public class OrderUser{
+		5 methods
+	}
+	package com.amazon.abcd;
+	public class Review{
+		25 methods
+	}
+	
+	
+	
+	
+	package com.amazon.pqr;
+	public class Profile{
+		public void login(String userid, String password){	
+			ssadasdsadasda
+		}
+		public int register(String userid, String password){	
+			ssadasdsadasda
+		}
+		public void unsubscribe(String userid){
+			asdsadad
+		}
+		public String changePass(String uid,String pwd){
+			sdsdsfsd
+		}
+	}
+	package com.amazon.abcd;
+	public class Shopping{
+		public void add2Cart(String prodName,int quantity){	
+			ssadasdsadasda
+		}
+		public void removeFromCart(String prodName){	
+			ssadasdsadasda
+		}
+		public void checkout(){
+			asdsadad
+		}
+	}
+	
+	
+	public class Strut{
+		@autowired
+		Shopping s;
+		public void method(){
+			sysout("in strut");
+			s.add2Cart("iphone");
+		}
+	}
+	@Aspect
+	public class ShoppingAspect{
+		@Around("within (com.amazon..*)")
+		public void abcd( ProceedingJoinPoint pj){
+			sysout("hi entering");
+				pj.proceed();
+			sysout("bye bye leaving");
+		}
+	}
+	package com.amazon.abcd;
+	@Service 
+	public class Shopping{
+		public int add2Cart(String prodName){	
+			sysout("in shopping spring");
+			int i=10/0; // exception thrown
+			return i;
+		}
+	}	
+	STRUT >>>      ShoppingAspect  >>> Shopping
+	in strut
+	hi entering
+	in shopping spring
+	bye bye leaving
+	
+
+
+
+********* Spring data *************
+
+
+Database : 
+	stores information : ENTITY represents the information/record
+	CRUD operations : REPOSITORY implements/provides CRUD operation
+		
+CRUD
+Create - insert - Repository . save()
+Read - select - Repository findBy........
+Update - update - Repository.save()
+Delete - delete - Repository.delete()
+
+queries
+	SQL
+	JPQL
+
+
+Part of Repository program			
+	findBy	Read record	
+	save	Create and Update record	
+	delete	Delete record	
+
+
+Read record
+	Prof p=repo.findById("john");		
+	sysout ( p.password );		
+
+delete record
+	Prof p=new Prof();	
+	p.uid="tony";	
+	repo.delete(  p );	
+
+update record
+	Prof p=new Prof();	
+	p.uid="tony";	
+	p.pwd="tony456";	
+	repo.save(  p );	
+
+create record
+	Prof p=new Prof();	
+	p.uid="tony";	
+	p.pwd="tony456";	
+	p.email="tony123@g.com";	
+	p.addr="oh";	
+	repo.save(  p );	
+
+
+Configuration SPring data
+
+1) add dependancy spring data jpa
+2) application.properties file configure Database settings
+	spring.datasource
+3) add location of entity and repository program in MainApplication.java program
+	@EnableJpaRepositories("package.name.where.you.keep.repository.programs")
+	@EntityScan({"package.name.where.you.keep.entity.programs"})
+
+
+
+ORM - Object Relational Mapping
+1) Create Entity program that represents database table
+	table name and column name TO class name and variable name mapping
+2) Create repository program that allows CRUD facility
+EXAMPLE TO CREATE JPA PROGRAM FOR TABLE "ORDERS"
+	Order
+	"pName"		"pQuantity"		"userid"		"orderId"
+	iphone		10				john			1
+	samsung		5				jane			2
+	iphone		5				john			3
+	
+	@Entity
+	@Table(name="orders")
+	public class OrderEntity{
+	   @column("pName")    String productName;
+	   @column("pQuantity")    int productQuantity;
+	   @column("userid")    String buyerUserid;
+	  // get set methods
+	}
+	@Repository
+	public interface OrderRepository extends jpaRepository<Integer,OrderEntity>
+	{
+		List<OrderEntity> findByBuyerUserid(String u);
+		List<OrderEntity> findByProductName(Stirng p);
+	}
+	or.
+	@autowired
+	OrderRepository or;
+	List<OrderEntity> multipleRecords=or.findByBuyerUserid("john");
+	sysout( multipleRecords.get(1)  );
+	
+	
+	
+	
+
+	Login	
+	"userid"		"password"		"firstName"		"lastName"
+	john			john123			john				doe
+	jane			jane456			jane				doe
+	mike			mike111			mike				evans
+	
+	sql = written with reference to table name and column names
+	select * from Login where userid=? and lastName=?  
+	
+	jpql = written with reference to entity class name and entity variable
+	 select u from LoginEntity u where u.uid=?1 and u.lName=?2
+	
+	@Entity
+	@Table(name="login")
+	public class LoginEntity{
+	   @Id  @column("userid")    String uid;
+	   @column("password")    String pwd;
+	   @column("firstName")    String fName;
+	   @column("lastName")    String lName;
+	  // get set methods
+	}
+	@Repository
+	public interface LoginRepository extends jpaRepository<String,  LoginEntity >
+	{
+		List<LoginEntity> findByUidAndPwd(	String u,String p	) ;
+		List<LoginEntity> findByFNameOrLName (  String f,String l);
+		
+		JPQL query.... 
+		@Query(value="select u from LoginEntity u where u.uid=?1 and u.lName=?2")
+		List<LoginEntity> verifyJPQL(String u,String p);
+		
+		SQL query
+		@Query(value="select * from Login where userid=?1 and lastName=?2  ",nativeQuery=true)
+		List<LoginEntity> verifySQL(String u,String p);
+		
+	}
+	
+	verifySQL("john","doe");
+	
+	
+	List<LoginEntity> records=repo.findByUidAndPwd("john","john123");
+	if(records.size() == 0 )
+		login failure
+	else
+		welcome
+************** JUnit ***********
+
+
+Login method - testing 
+	1 scenario (test case) 
+	confirm/assert if login method return false on EMPTY USerid and pasword
+	confirm/assert if login method return false on WRONG userid and password
+	confirm/assert if login method return true on CORRECT userid and password
+	
+	test suite : group of test cases
+	
+	
+	assertEqual( 	Message to display if confirmation fails , 	Expected result,		Result received		) 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+Product table
+	ProductName	quantity
+	samung		20
+select * from product where productName='' or quantity=12;	
+	
+@Entity // store information
+@Table(name ="product")
+public class Prd{
+	@Id
+	@column("ProductName")
+	String prod;
+	@column("quantity")
+	int quantity;
+}
+@Repository // CRUD operation
+public interface prodRepo extends JPARepos<prd,String>{
+	List<Prd> findByProdOrQuantity(string prodName,String quan);
+}
+
+@autowired
+prodRepo repo;
+
+
+prodRepo repo;
+@autowired
+public void setRepo(prodRepo t){
+	repo=t;
+}
+
+
+Prd p1=new Prd();
+p1.prod="Iphone"; p1.quantity=100;
+repo.delete(p1);
+
+
