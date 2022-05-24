@@ -128,6 +128,40 @@ test website
 *************************************
   
   
+  browser - Web Client software : customers use to visit your website.
+	browser converts HTML code received from server and converts into Graphical User Interface
+	
+tomcat - Web Server software : website is hosted
+
+Hyper text - text content that has link to other resources on the website
+			web resource - webpage, image, video
+
+HTTP : Hyper Text Transfer Protocol : Hyper Text transportation service 
+between client and server machine
+	Request-Response chain
+	Request =  Data is transferred FROM client TO server
+		Ex : customer types userid and password then clicks login button
+	Response = Data is trasnferred FROM Server TO Client
+		Ex : Server machine responds with either welcome or login fail webpage
+	
+HTML : Hyper Text Markup language
+	Markup - made of tags. contains elements and attibutes
+	
+	
+
+1) Customer Types car and click on google search.
+2) Customer Data "car" is transferred from browser(Client) to google machine(Server)
+	Transferred by HTTP... (Http Request)
+3) google machine has server side JAVA programs that will provide search result
+	Response is sent as Hyper Text usually as a HTML code
+	Again Transferred by HTTP... (Http Response)
+4) Browser s/w has the intelligence to convert html code into graphics
+
+
+
+
+	
+	
 html
 	Text , division, take input , interactive elements
 
