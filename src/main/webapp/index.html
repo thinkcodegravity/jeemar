@@ -1,11 +1,89 @@
 <html>
+<style>
+	#abc{
+		height:100%;
+	}
+</style>
 	<link href="test.css" rel="stylesheet" type="text/css"></link>
+	<script src="test.js"></script>
 	<div id="entirePage">
-		<div id="header"></div>
+		<div id="header" >  
+		amazon logo
+			<form action="Http://loginamazon">
+				<table>		
+					<tr>	
+						<td>userid</td>
+						<td><input id="userid" name="userid" type="text"></td>
+					</tr>	
+					<tr>	
+						<td>password</td>
+						<td><input id="password" name="password"  type="password"></td>
+					</tr>	
+					<tr>	
+						<td></td>
+						<td><input type="submit" value="login"></td>
+					</tr>	
+				</table>		
+ 
+						
+				
+			</form>
+		
+		</div>
 		<div id="body">
-			<div id="filter"></div>
-			<div id="display"></div>
+			<div class="filter">
+				<Textarea rows="5" cols="10"></Textarea>
+				<input id="userid" name="userid" type="text"></td>
+				<ul>
+					<li>banana</li>
+					<li>mango</li>
+					<li>apple</li>
+				</ul>
+				
+				<ol>
+					<li>onion</li>
+					<li>tomato</li>
+					<li>potato</li>
+				</ol>
+				
+				<select>
+					<option value="java"> java</option> 
+					<option value="jee"> jee</option>
+					<option value="dotnet"> dotnet</option> 
+				</select>
+				<br>
+				<input type="radio" name="vegetables" value="onion">onion</input>
+				<br>
+				<input type="radio" name="vegetables" value="tomato">tomato</input>
+				<br>
+				<input type="radio" name="vegetables" value="potato">potato</input>
+				
+				
+				<br>
+				<input type="checkbox" name="vegetables" value="onion">onion</input>
+				<br>
+				<input type="checkbox" name="vegetables" value="tomato">tomato</input>
+				<br>
+				<input type="checkbox" name="vegetables" value="potato">potato</input>
+				
+			</div>
+			<div id="display">
+				<div id="products">
+					<img src="product.png">
+				</div>
+				<div id="products">
+					<img src="product.png">
+				</div>
+				<div id="products">
+					<img src="product.png">
+				</div>
+				<div id="products">
+					<img src="product.png">
+				</div>
+				
+			
+			</div>
 		</div>
 		<div id="footer"></div>
 	</div>
-</html>
+</html>	

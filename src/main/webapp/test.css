@@ -2,12 +2,30 @@
 	height:100%;
 	width:100%;
 	background:yellow;
+} 
+td{
+	color:white;
+	font-size: 20;
+	font-style: normal;
+	font-family: fantasy;
+	
 }
 #header{
 	height:20%;
 	width:100%;
 	background:#21618C;
+	text-align:right;
 }
+#header:hover{
+	color:yellow;
+}
+input{
+	background:green;
+}
+input:active{
+	background:yellow;
+}
+
 #body{
 	height:70%;
 	width:100%;
@@ -18,7 +36,11 @@
 	width:100%;
 	background:#2874A6 ;
 }
-#filter{
+/*
+html elemnt has class attr= .
+html elemnt has id attr= #
+*/
+.filter{
 	height:100%;
 	width:10%;
 	background:#85C1E9;	
@@ -27,6 +49,26 @@
 #display{
 	height:100%;
 	width:90%;
-	background:#D6EAF8;	
+	background:white;	
 	float:left;
+}
+#products{
+	border-radius: 10px;
+	height:30%;
+	width:13%;
+	background:green;
+	float:left;
+	margin:5px;
+	padding-left:12px;
+	padding-top:13px;
+	/*
+	transform:rotate(45deg); 
+	-ms-transform:rotate(45deg); 
+	-webkit-transform:rotate(45deg); 
+	transition-delay: 15s;
+	*/
+}
+#products:hover
+{
+	border-style: solid;
 }

@@ -149,39 +149,49 @@ HTML : Hyper Text Markup language
 	
 	
 
-1) Customer Types car and click on google search.
-2) Customer Data "car" is transferred from browser(Client) to google machine(Server)
-	Transferred by HTTP... (Http Request)
-3) google machine has server side JAVA programs that will provide search result
-	Response is sent as Hyper Text usually as a HTML code
-	Again Transferred by HTTP... (Http Response)
-4) Browser s/w has the intelligence to convert html code into graphics
-
-
-
-
+CSS 
+	code in external file.. that is linked to html file using link element
+	in-line css code= style="height:100%;width:50%"
+	css html element = style
+	
+height and width : percentage value is recommended to have consistency in display on all devices
+	width:600px;
+	
+color value : 
+	literal color name : red/blue/green/yellow/white
+	hex color code : #85C1E9
+	RGB color code : ( 0-255 , 0-255, 0-255 )
+	red green blue 
+	
+display : hide or show html eleemtns
+	inline/ block : show .... block- new line after showing element, inline- does not add new line
+	none : hide
+	
+event listener :
+	2 standard input devices - keyboard and mouse
+	webpage feature that tracks customer activity 
+	
+	keyboard - keyup, keydown, keypress
+	mouse - move/hover, click, doubleclick
+	html event listerne - webpage html loads in browser/ unloads in browser
 	
 	
-html
-	Text , division, take input , interactive elements
-
-CSS - cascading style sheet
-	dimension
-	color
-	text size style
 	
-
-
-
-
-********* html *******
-Browser - 
-	communicates over http on the internet. (sends request to  AWS machine and receive html code as response)
-	Convert html code into Graphical and textual display on the screen
+Front-end - TRIO
+	HTML - text content and input elements
+	CSS - dimensino, colors, style, animation
+	JavaScript 
 	
-	Text - Html code 
-	Grapics - CSS programs 
-	layout - CSS programs
+	
+(Javascript) Reception - insurance, name, injury details
+	Initial info gathering - allergy, reason for vist, medication
+	verification - insurnace ? id proof ? appointment ?
+	
+(java) Doctor - read info and diagnose
+	
+	
+	
+	
 ************* event listener **********
 
 events : activity triggered by customer actions
@@ -1803,3 +1813,4 @@ p1.prod="Iphone"; p1.quantity=100;
 repo.delete(p1);
 
 
+**
