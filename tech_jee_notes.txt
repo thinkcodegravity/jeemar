@@ -1813,4 +1813,55 @@ p1.prod="Iphone"; p1.quantity=100;
 repo.delete(p1);
 
 
-**
+********* jquery ***
+
+decoupled architecture
+short code
+
+
+<html>
+	<div id="one">hello</div>
+	<div class="two">
+		<div id="three">john</div>
+	</div>
+	<input type="text" id="email">
+</html>
+
+$("#three").parent() = get access to Parent element of id="three" element
+$("#two").child()
+
+1)
+$("#email").val()  = that gives access to customer entered value
+
+2)
+$("#one").text() = gives access html code... return "Value" of an html element "hello"
+	<div id="one">hello</div>
+	$("#one").text("bye bye") 	
+	<div id="one">bye bye</div>
+3)
+$("#two").html()  = give access html code... return "html code/ child element" of html element
+											<div id="three">john</div>
+overloaded methods
+$("#email").val("abc@gmail.com") 
+
+NO input methods = used for READING
+WITH input methods = used for CHANGING
+
+
+
+
+
+<html>
+	<div id="one">hello</div>
+	<div class="two "></div>
+</html>
+
+
+id attribute - javascript program used to access html elemenet
+class attribute - css program used to access html element
+
+
+
+
+
+

@@ -10,17 +10,16 @@ td{
 	font-family: fantasy;
 	
 }
-#header{
+.header1{
 	height:20%;
 	width:100%;
+}
+.header2{
 	background:#21618C;
 	text-align:right;
 }
 #header:hover{
 	color:yellow;
-}
-input{
-	background:green;
 }
 input:active{
 	background:yellow;

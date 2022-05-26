@@ -5,11 +5,13 @@
 	}
 </style>
 	<link href="test.css" rel="stylesheet" type="text/css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="test.js"></script>
 	<div id="entirePage">
-		<div id="header" >  
+		<div id="head" class="header1 header2 header3">
+		
 		amazon logo
-			<form action="Http://loginamazon">
+			<form action="login">
 				<table>		
 					<tr>	
 						<td>userid</td>
@@ -17,11 +19,11 @@
 					</tr>	
 					<tr>	
 						<td>password</td>
-						<td><input id="password" name="password"  type="password"></td>
+						<td><input class="password" name="password"  type="password"></td>
 					</tr>	
 					<tr>	
 						<td></td>
-						<td><input type="submit" value="login"></td>
+						<td><input id="regButton" onclick="return validate()" type="submit" value="registration"></td>
 					</tr>	
 				</table>		
  
