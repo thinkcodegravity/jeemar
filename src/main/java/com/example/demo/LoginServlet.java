@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/login")
+@WebServlet("/authentication")
 public class LoginServlet  extends HttpServlet {
 		public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 			String uid=req.getParameter("userid");

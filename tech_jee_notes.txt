@@ -1860,8 +1860,96 @@ WITH input methods = used for CHANGING
 id attribute - javascript program used to access html elemenet
 class attribute - css program used to access html element
 
+document.getEleentByid('userid').innerhtml=""
+html() = add html code in runtime
+.css("color","red");
+.hide()
+
+****************** FORM SUBMIT ****************
+
+userid <input type="text" id="uid" class="uid" name="uid"  >
+password<input type="text" id="pwd" class="pwd" name="pwd"  >
+
+id = javascript programs : need access to read customer entered input
+	$("#uid") 
+class = CSS programs : need access for graphics/animation on the text box
+	.uid{
+		background:yellow;
+	}
+
+relative URL : /login 
+	Browser generates complete URL in below 2 steps
+	1) fetch current webpage url : http://localhost/
+	2) join current url with "/login"
+	http://localhost/login
+	
+absolute (complete) URL :  http://localhost/login
+
+
+name = server side java program
+	1) Customer browser (html/frontend) has to connect to Server program
+	2) Customer data has to be transferred to Server program
+		
+form-submit solution
+	1) <form action="/authentication"> in html code (FRONT END)
+	     @WebServlet("/authentication")  in java code (BACK END) 
+	2) 
+	server program is located at below http url
+	http://localhost/authentication?userid=java&pwd=jee
+	? = seperate java program link AND customer typed value
+	& = seperate multiple customer typed value
+	key-value pair = what customer data 
+		where does the key comes from ???? userid ... pwd
+		"name" attribute from input element
+
+	authenticationjavajee = tag to server program , cust typed userid, cust typed pwd
+
+ON CLICK OF SUBMIT BUTTON - browser generated below url 
+http://localhost/authentication?userid=java&password=jee
+
+authentication = came from "form action" attribute
+userid = came from "name" attribute of first text box
+java = customer typed in first text box
+password = came from "name" attribute of second text box
+jee =  customer typed in second text box
+
+delimiter
+asdadasdasdasdsadasasd
 
 
 
+form-submit - connection between frontend and backend and then data transfer... 
+	voluntary	=	customer has to choose to click on button voluntarily			
+	synchronous =		customer has to wait until server program responds			
+	Code written in = HTML
+	
+********************* AJAX **********
 
+AJAX - connection between frontend and backend and then data transfer... 
+	involuntary	=	customer does NOT have to do anything
+	asynchronous =	customer can continue using the website
+	Code written in = Javascript
+
+recorded as XHR = Xml Http Request
+
+
+
+name = server side java program
+	1) Customer browser (html/frontend) has to connect to Server program
+	2) Customer data has to be transferred to Server program
+		
+Ajax solution
+	1) transfer control from html to javascript
+		$("#userid").blur( checkUserAjax );
+		(HTML ELEMENT).event_listner( JAVA_SCIPT_FUNC)
+	2) 
+	
+	
+	
+get: insecure data transfer... data is visible in the url
+	http://localhost/authentication?userid=john123&password=jee
+post:secure data transfer... data is sent not as part of url.. but in the payload..
+	http://localhost/authentication
+	
+	
 

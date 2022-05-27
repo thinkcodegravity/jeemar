@@ -100,26 +100,55 @@ function test(){
 function add(a, b){
 	return a+b;
 }
+	/*
+	var a=10;
+	var a=true; // redeclare variable
+	a=30; // reassign same 
+	
+	const b=20;
+	const b=30; // cannot redeclare
+	b=40; // cannot reassign
+	*/
 
 
 function checkUserAjax (){
-	
-	var serverCommunicationObject={
+	/*
+	java object = variable and methods
+	js object   = property and functions
+	ajax js object has property and functino
+		property
+			url : http url location of server program (compare with form action="")
+			type : get/post
+			data : key:value pair data
+		function : contains call-back function
+			success : if server program connection is a success
+				(data) - contain servers response
+			error : if server program connection failed
+				(data) - contains reason why ajax could not connect to server program
+	*/
+	/*
+		url: '/checkUser?userid='+$("#userid").val(),
+	    type: 'get',
+	        
+	*/
+	const serverCommunicationObject={
 	        url: '/checkUser',
 	        type: 'post',
 	        data: {
-	                  userid:$("#uid").val()
+	                  userid:$("#userid").val()
 			},
 	        context: this,
 	        success: function (data) {
 	                  if(data == "unavailable")
-				  		alert("userid already taken");
+				  			alert("userid already taken");
 	        },
 	        error: function (data) {
-	                  console.log("failure");
+	                  alert("unable to reach server program")
 	        }
 	};
 	
+	// jquery functino .ajax it will accept
+	// javascript object with AJAX property and functions
 	$.ajax(serverCommunicationObject);	
 	
 	
@@ -153,9 +182,15 @@ function disableReg (){
 	
 		
 }
+function manipulateDom(){
+	var tableCode=" <table border='1'> <tr><td>apple</td><td>mango</td></tr></table>"
+	$("#footer").html(tableCode);
+}
 $(document).ready(function() {
 		$(".password").blur( disableReg );
-//	$("#userid").blur( checkUser );
+		$("#products").click( manipulateDom)
+	$("#userid").blur( checkUserAjax );
+	// HTML Eleemt)
 //	$("input").click( testInput );
 //	$("#header").mouseenter( headermouse );
 //	$("#header").mouseleave( headermouseout );
