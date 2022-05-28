@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/authentication")
 public class LoginServlet  extends HttpServlet {
 		public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+			
 			String uid=req.getParameter("userid");
 			String pwd=req.getParameter("password");
 			Set<String> names;

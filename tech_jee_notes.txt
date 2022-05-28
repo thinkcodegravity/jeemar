@@ -280,7 +280,82 @@ $("#user").val(); = access customer typed
 	
 document.getElementById( "user")
 $("#user")
+**********************JSON*************
+
+1) Meta - data... infor about data
+asdad asdad asdsada adasd aasd a
+
+2) Simple data format
+key-value
+userid=asdada&pwd=asdad
+
+3) xml
+<Customer>
+	<name>john</name>
+	<age>21</age>
+	<address></address>
+		<street>123</street>
+		<cty>qwe</cty>
+		<state>ny</state>
+		<zip>1234</zip>
+	<credit>
+		<umber>1232131312</umber>
+		<expiry>12/23</expiry>
+		<sec code>123</sec code>
+		<acctHolder>asd asd</acctHolder>
+	</credit>	
+</Customer>
+
+Cluttered, complex reading ,complex writing
+4) JSON
+
+"Customer":
+		{
+			"name":"john",
+			"age":21,
+			"address":{
+				"street":"abc st",
+				"cty":"ny",
+				"state":"ny",
+				"zip":12345
+				},
+			"credit":{
+				"number":1231232131
+				,
+				"expiry":"12/22"
+			}
+		}
+1) complex data enclosed within brackets {}
+2) data stored as key-value pair separated with :
+3) key here is called json property/attribute
+4) property/attribute/key should be enclosed in ""
+5) values can be anything. true. 123, 1.44 , "abc", complex data
+6) each key-value pair should be separated by comma ,
 	
+Java Script Object Notation =
+		String representation of Javascript object
+	
+"product":{
+	"name":"iphone",
+	"price":999.99
+}
+
+
+JSON universal data format that EVERY language understands
+
+Microservice - 
+	Rest webservice (	)
+	JSON ( data format)
+	
+CLIENT >>>>  JAVASCRIPT >>>>> JSON >>>>>> SERVER >>>> REST java program
+
+JS-JSON-REST
+
+Backend : Server Java Program
+Servlet , Rest webservice, Soap webservice, Strut Controller, Spring Controller
+
+
+Javscript Language 						Java Language
 *********************** Http ********************
 Hyper link
 HTML - Hyper Text Markup language
@@ -473,67 +548,20 @@ JSON - transfer complex data between client and server
 	
 	
 	
-*************** servlet **************
-
-http : get v/s post
-
-Servlet life cycle
-
-Who creates servlet java object = Tomcat web server software
-Who calls doGet or doPost = doService method in the servlet
-Who gives request / response object = tomcat creates req/res object gives it to service method
-			service method gives it to doget or dopost methods
-Customer John trying to login
-Tomcat container - web server software
-	look for matching java program for "\login"
-	found LoginServlet for \login
-	LoginServlet ls=new LoginServlet();
-	ls.init();
-	ls.service();
-	
-Customer Jane trying to login	
-Tomcat container - web server software
-	look for matching java program for "\login"
-	found LoginServlet for \login
-	ls.service();
-Tomcat - Web server software
-
-Spring boot war file includes - html/css/js/java/tomcat programs
-
-Servlet
-	init - override is optional ( called only once when servlet object is created)
-		program setup or initialization code is written here
-	doGet - override is mandatory
-	doPost - override is mandatory
-	doService - override NEVER
-		every time a request comes to your servlet
-	destroy - override is optional server shuts down ( servlet object is destroyed )
-
-Response type category
-	webpage
-		redirect
-		forward
-	text/binary : text message, image, video
-		response.getWriter - text response (Character/text stream)
-		response.getoutputstream  - image/video ( binary stream)
-	
-Http Sessions
-	HTTP is a stateless protocol 
-	State - context of converstation between 2 party
-	get Customer session = req.getSession()
-	read information stored in customer session= getAttribute()
-	write information in customer sesssion = setAttribute(name,value);
-		Session table = key / value pair.. key is String.. value can be any Object(primtive/complex objects)
-			String = 123/true/arraylist/String
-	
-status code
-	200 : request succesfull.
-	3XX : request redirect
-	4XX : CLIENT side problem request not available/unauthorized
-	5XX : server had a problem ( server program had error/exception)
-	
-	
 **************************************** Database **************************************** 
+
+
+Java variable hold/store information
+
+Computer store information in MEMORY
+	Hard drive - long term memory/ Persistent / Permanent storage
+		Database store information here
+	RAM - short term memory
+		Java stores information here : variable held information
+		is lost as soon as program ends.
+	
+	
+
 
 database schema
 

@@ -43,6 +43,8 @@ function test(){
 	g=true;
 	var names=["john","jane","andy"];
 	console.log(names[0]);
+	
+	
 	var student={
 		name:"jane",
 		grade:1,
