@@ -17,10 +17,30 @@ public class LoginServlet  extends HttpServlet {
 			String pwd=req.getParameter("password");
 			Set<String> names;
 			try {
+				/*
 				if(uid.equals("java") && pwd.equals("jee"))
-					res.sendRedirect("success.html");
+					req.getRequestDispatcher("success.html").forward(req, res);
 				else
-					res.sendRedirect("error.html");
+					res.sendRedirect("https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fwww.google.com%2F&hl=en&dsh=S-1475795627%3A1654813588595074&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp");
+					*/
+				if(uid.equals("java") && pwd.equals("jee"))
+				{
+					res.getWriter().write("this is text success response");
+					res.getWriter().flush();
+					res.getWriter().close();
+				}
+				else
+				{
+					String failureMessage="this is binary failure response";
+					byte[] failureBinaryData=failureMessage.getBytes();
+					res.getOutputStream().write(failureBinaryData);
+					res.getOutputStream().flush();
+					res.getOutputStream().close();
+					
+				}
+				
+				
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

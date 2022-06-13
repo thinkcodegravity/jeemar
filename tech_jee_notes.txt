@@ -561,6 +561,9 @@ Computer store information in MEMORY
 		is lost as soon as program ends.
 	
 	
+Oracle, Microsft sql serve, postgres, mongo db, mysql
+
+
 
 
 database schema
@@ -1981,3 +1984,109 @@ post:secure data transfer... data is sent not as part of url.. but in the payloa
 	
 	
 
+************** Database **************
+
+Website Server : tomcat   ( host all website programs including html,css,js,java,images)
+Website Client : Browser or Mobile Native app
+
+Database Server : MySQL ( information is stored)
+Database Client : WorkBench, JDBC program (Java DataBase Connectivity),
+	
+
+
+rdbms
+table
+rows
+columns
+primary key
+Foreign key
+indexes
+primary column
+dependant column
+
+
+DDL : Data definition language
+	Tables - create , add/delete columns , delete entire table
+	
+DML : Data manipulation language
+	Records in the table - CRUD operation on records/rows in the table
+
+
+
+
+ ************************ SERVLET ***************
+ 
+ HTTP Status code
+ 
+ 2XX = successfull transaction complete ( directly or forward )
+ 3XX = redirect to another site
+ 4XX = Problem on customer side
+ 5XX = Problem on server side
+ 
+ URL - most common way to access internet
+ 
+ LoginServlet ls=new LoginServlet(); // called constructor
+ ls.init(); // tomcat calls this method
+ ls.service (); // tomcat calls this method
+	look into customer http method (is it get or post)
+	call doGet() if data is in url ie get 
+	call doPost() if data is in body/package
+	
+ constructor = called when object is created
+	OPTIONAL
+ init method = called after object creation...  : used for SETUP activity
+	called only once in its lifetime
+	OPTIONAL
+ service method = called by tomcat... has logic to call doget or dopost method
+	called as many times as customer visit this program
+	NEVER EVER override this method
+ doget method
+	MANDATORY to override
+ dopost method
+	MANDATORY to override
+ destroy method : used for CLEANUP activity
+	OPTIONAL
+ 
+ 
+ 
+ 
+ http://www.facebook.com/authentication?userid=java&password=jee
+ 1)
+ http : hyper text transportation service
+ 2)
+ localhost : server machine is on the same laptop as the browser
+ www.facebook.com : gives me ip address of FB server machine
+ 
+3)/authentication
+is connected to a Java server program
+
+4) userid=java&password=jee
+customer typed info in the webpage
+
+form 
+
+ ?userid=java&password=jee
+ query string
+ 
+ req.getParameter("password");
+ 
+ 
+ java servlet Response
+	Webpage response
+		forward : if dstination webpage is in same machine/project
+			success.html
+		redirect : if destination webpage is in external machine/project/company
+			googleaccount.html
+			
+	Non-webpage response
+		text
+		binary
+			image/audio/video
+	
+	
+	
+	
+ 
+ 
+ 
+ 
