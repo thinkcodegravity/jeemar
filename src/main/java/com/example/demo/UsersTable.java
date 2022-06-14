@@ -34,7 +34,7 @@ public class UsersTable {
     {
         PreparedStatement stmt = null;
         try
-        {
+        {//insert into users (userid,password) values ( 'tony','tony1234' )
             stmt = conn.prepareStatement
             		("insert into users (userid,password) values ( ?,? )");
             stmt.setString(1, uid); // dynamic binding
@@ -49,6 +49,7 @@ public class UsersTable {
         finally
         {
             try{
+            	conn.close();
             	stmt.close();} catch(SQLException s){}
         }
     }
@@ -113,15 +114,11 @@ public class UsersTable {
         			prepareStatement
         			("select * from users where userid=? and password=?");
         			// dynamic query
-        	
-//("select * from users where userid='john' and password='john1!'");
-// static query
-        			// dynamic Binding
+        	// dynamic Binding/attaching
         	// call method setString for column with ? is varchar or char
         	stmt.setString(1, userid); 
         	stmt.setString(2, pwd);
-        	// stmt.setInt(3, 10);;
-        	// select * from users where userid='jane' and password='jane1!'
+        	// select * from users where userid='jane' and password='jane123'
             resultSet = stmt.executeQuery();
             if(resultSet.next())
             {

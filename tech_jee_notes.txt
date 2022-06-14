@@ -2087,6 +2087,26 @@ form
 	
 	
  
+ ************** JDBC ************
+ 
+ mysql
+ oracle, postgres, microsoft sql server
  
  
  
+ JEE - 
+	servlet & JDBC (LEgacy architecture)
+	webservices - rest/soap/microservice
+	frameworks - struts/spring/sprigdata
+
+
+Maven : build tool
+	add dependancy = mysql, tomcat
+	package your project : html/css/js/java..... compressed into single executable file... 
+		xyz.war (Web ARchive)
+	
+Spring boot
+	: project ecosystem
+	embedded webserver
+	project setup
+	default dependancy

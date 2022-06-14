@@ -10,6 +10,9 @@ public class DatabaseConnection {
 		try{
 		Class.forName("com.mysql.jdbc.Driver");
 		// connection string
+		// 1521 = oracle
+		// 1433 = microsoft sql server
+		// 5432 = postgres
 	    conn = DriverManager.getConnection
 	    		("jdbc:mysql://localhost:3306/training","root","root"); 
 		  return conn;

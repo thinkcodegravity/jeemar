@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -15,15 +16,15 @@ public class LoginServlet  extends HttpServlet {
 			
 			String uid=req.getParameter("userid");
 			String pwd=req.getParameter("password");
-			Set<String> names;
 			try {
-				/*
-				if(uid.equals("java") && pwd.equals("jee"))
-					req.getRequestDispatcher("success.html").forward(req, res);
+				Connection conn=DatabaseConnection.getDBConnection();
+				boolean result=UsersTable.validateLogin(uid, pwd, conn);
+				if(result)
+					res.sendRedirect("success.html");
 				else
 					res.sendRedirect("https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fwww.google.com%2F&hl=en&dsh=S-1475795627%3A1654813588595074&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp");
-					*/
-				if(uid.equals("java") && pwd.equals("jee"))
+					
+				/*
 				{
 					res.getWriter().write("this is text success response");
 					res.getWriter().flush();
@@ -38,6 +39,7 @@ public class LoginServlet  extends HttpServlet {
 					res.getOutputStream().close();
 					
 				}
+				*/
 				
 				
 				

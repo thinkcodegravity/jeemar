@@ -191,7 +191,7 @@ function manipulateDom(){
 $(document).ready(function() {
 		$(".password").blur( disableReg );
 		$("#products").click( manipulateDom)
-	$("#userid").blur( checkUserAjax );
+	//$("#userid").blur( checkUserAjax );
 	// HTML Eleemt)
 //	$("input").click( testInput );
 //	$("#header").mouseenter( headermouse );
