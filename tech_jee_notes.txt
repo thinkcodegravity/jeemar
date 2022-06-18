@@ -2110,3 +2110,58 @@ Spring boot
 	embedded webserver
 	project setup
 	default dependancy
+	
+	
+	
+	
+************* webservice ******	
+
+
+SOAP*********
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.webservice.tutorial.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:add>
+         <arg0>10</arg0>
+         <arg1>25</arg1>
+      </soap:add>
+   </soapenv:Body>
+</soapenv:Envelope>
+	Conversion from soap xml INTO jaava variable
+int a=10;
+int b=25
+
+int sum=a+b;
+	Conversion from java variabel INTO soap xml
+	
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:addResponse xmlns:ns2="http://soap.webservice.tutorial.com/">
+         <return>35</return>
+      </ns2:addResponse>
+   </S:Body>
+</S:Envelope>
+
+REST********
+http://localhost/addCal/10/25
+int a=10;
+int b=25
+
+
+
+
+Rest webservice
+	Get
+		path input
+			Ex : http://localhost/addCal/10/25
+
+		query input = tag each information
+			Ex : http://localhost/dataOfBirth?date=10&month=05
+	
+	Post
+		JSON
+	
+Soap webservice
+	
+	
+	
