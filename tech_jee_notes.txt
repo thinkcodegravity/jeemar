@@ -2628,3 +2628,464 @@ Framework project setup
 	3) go to src/main/resources/application.properties
 		configure the database details ( refere trainer project application.properties)
 	
+
+webpages
+	static : content remains same ex:wikipidea
+		html webpage
+	dynamic : gmail, facebook
+		jsp webpage, asp
+		
+		jsp : HTML + Java = 
+			HTML + JSP Tags = jsp tag is html style of programming
+			
+			Java - dynamic content
+				variable = that can hold different value/DATA
+				control flow = if - else, for , while
+			struts tag - dynamic content
+				struts tag Data element
+				struts tag Control element
+
+Login.java
+struts.xml
+login.html
+welcome1.jsp
+
+
+*******SPRING ******** Dependency Injection and Aspect Oriented Programming******
+
+Spring framework  : programming
+	architecural design
+	
+Spring boot : environment setup
+	Out of the box solution to start web programming
+	Project setup
+	
+to setup a Website project
+1) where are all the programs stored
+	java = src/main/java
+	class = bin/main/java/
+	html = src/main/webapp
+	settings = src/main/resources
+2) website software need additional software installed 
+	dependancy
+3) packaging = additional software like maven/ant
+	post programming .. create installer/setup file .war
+4) webserver software = tomcat embedded webserver
+
+Frameworks :
+	View :
+		HTML , JSP, Struts tag, 
+	
+	Controller :
+		Servlet, Rest webservice, Soap webservice, Strut Action, Spring mvc
+	
+	Model
+		Java, Spring, 
+		JDBC, hibernate, spring data
+		
+	Logging
+		sysout
+		apachae log4j
+		
+	testing
+		junit
+	
+	
+
+Ford Car
+	has-a engine
+	has-a wheel
+	has-a steering
+	
+	
+public class Car{
+	@autowired
+	Engine v8;
+	@autowired
+	Wheel michelin;
+	Steering st;
+}
+
+Car is depended on Engine
+
+layman terms
+	dependancy : A system is dependant on other component
+	dependancy injection : how the dependancy (wheel) are created for the car?
+
+technical terms
+	dependancy : global variable in a program
+		Engine v8;
+	dependancy injection : creating/initializing object (global variables)
+		=new  Engine();
+	
+
+	
+	
+Interface ICar{
+	public void drive();
+}
+
+public class Nissan implements ICar{
+	public void drive(){
+		sysout("driving nissan");
+	}
+	
+}
+
+ICar ic=new ICar(); // ICar is interface/abstrct/incomplete program.... new on incomplete/astract program not allowed
+ICar ic=new Nissan(); 
+
+@Autowired
+ICar ic;
+
+
+
+@autowired = dependancy injection required for below object creation challenges
+	responsbiliity of initializing the global variables is upto Spring framework
+	1) Engine is very complex system... how u create is not simple ( complex constructor input ******)
+	
+	2) interface/abstract programs not easy to initialize.. need to find out concrete implementing programs
+
+		
+		
+		
+IOC : inversion of control is concept 
+	that is implemented with Dependancy injection
+AOP : Aspect Oriented Programming
+	Separte Cross cutting concerns code from real business logic code
+
+CROSS CUTTING CONCERNS : additional lines of code that does not directly contribute to the purpose of the program
+however it is still needed for successfull website/software launch
+	
+BANKING COMPANY
+public boolean login(String userid, String password){
+	if(userid==john && password=john1!)
+		return true;
+	else
+		return false;
+}
+
+public boolean transferMoney(String toAccount,int amount){
+	code to transfer money
+	return true;
+}
+
+ASPECT PROGRAM
+public void aspectCommonCode(){
+	
+	// logging
+	sysout("customer john is trying to login");
+	// security = user mike has been blocked from website
+	if(userid == mike || userid==andy)
+		return false
+	// exception handling
+	try{
+		// performance check
+		start timer.... 5:30:15
+			
+		TRANSFER CONTROL TO BUSINESS METHOD
+			
+		
+		sysout("customer john login failed because he entered wrong password");
+		stop timer.... 5:30:20 = 5 seconds to login check
+	}
+	catch(Exception e){
+		sysout("please try agin later. we are experincing technical difficulty");
+	}
+
+	
+}
+
+
+
+xml = configuration
+annotation = configuration
+
+1) configure spring dependancy in pom.xml
+2) in main program include springbootapplication and component scan annotation
+	Note package names of any class that has below @
+	mention these package names in component scan
+	
+	
+Spring annotation
+	@configuration
+	@component
+		@controller = 
+			@RestController
+				Associate HTTP url to a program
+				converting json String to java object
+				extracting all the input from http url
+				construtcing http response to the customerfrom your java object
+				
+		@service
+			Session management
+			request management
+			singleton 
+		@repository
+			Database connection
+			creating queries
+			setting dynamic binding
+			reading results from your query
+			
+	@aspect
+	
+	Engine e=new Engine();
+	
+	Scope
+		Singelton : 1 object of this program is created.. this will be shared by entire
+				company customer
+		Session : 1 Object per customer login session
+		Request : 1 Object per customer request
+		prototype : 1 Object per call
+		
+
+Dependancy injection
+	1) If your program is depended on SPring program (@componet/service/repo/config/aspect)
+	2) Create and declare global vriable to the spring program 
+	3) annotate this variable with @autowired
+	4) NEVER INITIALIZE THESE SPRING OBJECT
+	
+	
+parent interface ICar
+child	Nissan
+child Toyota
+
+@Autowired = spring framework create object
+ICar ic;
+
+
+
+******* spring aspects **********
+package com.amazon.shopping;
+public class Order{
+	public String cancelOrder(String s){
+	}
+	public String editOrder(String s,int a){
+	}
+	public int placeOrder(String s){
+	}
+}
+package com.amazon.login;
+public class Profile{
+	public String register(String s,String b){
+	}
+	public String login(String s){
+	}
+	public boolean changePasword(String s){
+	}
+}
+
+
+Before – takes parameter joinPoint. Is procesed before joinpoint.
+		add code 	before target method
+
+After – takes parameter joinPoint. Is procesed after joinpoint, either after successful process or exception.
+		add code 	before target method
+
+Around – takes parameter joinPoint. Is procesed after joinpoint, either after successful process or exception.
+		add little bit of code  before target method AND little bit after the target method
+
+AfterReturning – takes parameter joinPoint. Is procesed only if successful execution.
+		Successfully completed - then extra code is added
+AfterThrowing – takes parameter joinPoint. Is procesed only if exception.
+		program has exceptions - then extra code is added
+
+
+
+@Before("execution ( * com.amazon.shopping.Order.*(String) )   || execution ( int com.amazon.shopping.Order.*(*) ) ")
+	public void getResponseTime( ) throws Throwable{
+		// ******************** SECURITY *************************
+		System.out.println("\n\n >>>>>>>>>>> PERFORMING SECURITY CHECK >>>>>>>>>>>");
+		String remoteAddress = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes())
+			       .getRequest().getRemoteAddr();
+		if(remoteAddress.equals("1.2.3.4")) {
+			System.out.println("client is blocked for security reason");
+			throw new Exception("Blocked Customer");
+		}
+		
+		// ******************** LOGGING *************************		
+		System.out.println("\n\n >>>>>>>>>>> SPRING ASPECT LOGGING >>>>>>>>>>>");
+	}
+	
+********* Spring data *************
+
+
+Database : 
+	stores information : ENTITY represents the information/record
+	CRUD operations : REPOSITORY implements/provides CRUD operation
+		
+CRUD
+Create - insert - Repository . save()
+Read - select - Repository findBy........
+Update - update - Repository.save()
+Delete - delete - Repository.delete()
+
+queries
+	SQL
+	JPQL
+
+
+************** JUnit ***********
+
+
+Login method - testing 
+	1 scenario (test case) 
+	confirm/assert if login method return false on EMPTY USerid and pasword
+	confirm/assert if login method return false on WRONG userid and password
+	confirm/assert if login method return true on CORRECT userid and password
+	
+	test suite : group of test cases
+	
+	
+	assertEqual( 	Message to display if confirmation fails , 	Expected result,		Result received		) 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+Product table
+	ProductName	quantity
+	samung		20
+select * from product where productName='' or quantity=12;	
+	
+@Entity // store information
+@Table(name ="product")
+public class Prd{
+	@Id
+	@column("ProductName")
+	String prod;
+	@column("quantity")
+	int quantity;
+}
+@Repository // CRUD operation
+public interface prodRepo extends JPARepos<prd,String>{
+	List<Prd> findByProdOrQuantity(string prodName,String quan);
+}
+
+@autowired
+prodRepo repo;
+
+
+prodRepo repo;
+@autowired
+public void setRepo(prodRepo t){
+	repo=t;
+}
+
+
+Prd p1=new Prd();
+p1.prod="Iphone"; p1.quantity=100;
+repo.delete(p1);
+
+
+
+
+
+If Using findBy
+1) create select sql query to search by first name
+	select * from users where first_name='john'
+2) execute the query
+3) result is stored in entity objects
+	1st entity object = andy, xyz,johnm ny null
+	2nd entity object = mon xyz john boston null
+	3rd entity object = john123 xyz john chicao null
+4) add all 3 entity object in store in a collection list
+
+
+Custom query provided in repository
+1) take your query
+2) dynamic binding = replacing question marks with input you pass
+3) execute new query
+4) results from query is stored in list / collection of entity object
+5) return list result
+
+
+
+
+SQL query = query is written with reference to database table and column names
+	@Query(value="select * from users where first_name =?1 or last_name=?2", nativeQuery=true)
+	public List<UsersEntity> searchByNativeQuery(String a,String b);
+
+JPQL = query is written with reference to entity class and variable names	
+	@Query("select u from UserEntity u where u.fName=?1 or u.lName=?2")
+	public List<UsersEntity> searchByJPQLQuery(String a,String b);
+
+
+Development
+
+
+	Unit Testing : test individual application layer/programs/methods
+	System Testing : End to End testing.... Entire project as a whole is tested
+	Integration Testing : Project communicating with programs in other project/system/company/business
+	Pre-production Testing : pre-production is a testing setup... replica of production setup.
+	Production Testing: post internet-launch... do the testing.
+
+
+Live/ on the internet/ Production
+
+
+
+Login page = "Test suite" for login page (group of test cases/ scenario)
+each and every scenario below... "test case"
+	1) Enter userid , didnot enter password = false
+		@Test
+		public void emptyPassword(){
+			Login lo=new Login();
+			boolean result=lo.verifyCredentials("john","");
+			assertFalse(result); // verify if result variable has value false
+		}
+	2) Enter password, didnot enter userid = false
+		@Test
+		public void emptyUserid(){
+			Login lo=new Login();
+			boolean result=lo.verifyCredentials("","asda");
+			assertFalse(result); // verify if result variable has value false
+		}
+	3) Didnt enter userid and password = false
+	4) Correct userid but wrong password = false
+	5) Correct password but wrong userid = false
+	6) Wrong userid and password = false
+	7)Correct userid and correct password = true
+
+	public class Login{
+		public boolean verifyCredentials(String userid,String password)
+		{
+			fsfdsf
+			sdfsdfds
+			sdfsdfs
+		}
+	}
+	
+	
+	
+	register
+	login
+	change password
+	unregister
+	
+	
+	
+Browser on click of submit button
+	
+1) request
+	INPUT
+	key-value = text box:customer typed input
+	userid:ron
+	pwd:ron1!
+	
+	URL
+	/registration
+	
+2) response
+	success
+	
+	
+	
+	
+	
+	
+	
