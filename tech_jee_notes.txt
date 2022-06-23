@@ -2164,4 +2164,467 @@ Rest webservice
 Soap webservice
 	
 	
+If Java program wants to read JSON data
+
+
+{
+	"name":"john",
+	"age":12,
+	"city":"ny"
+}
+
+public class Person{
+	String name;
+	int age;
+	String city;
+	// get/ set methods
+}
+	
+	
+	
+Simple interest caluclator
+Input to your webservice is JSON
+{
+	"principal":100000,
+	"time":30,
+	"rate":5,
+}	
+
+Java program that is JSON input compliant
+public class SimpleInterestInput{
+	int principal;
+	int time;
+	int rate;
+	//get and set methods
+}
+
+get method = input is in url
+?userid=john&password=john1!
+
+post method = input is in body
+
+
+
+HOW DO WE TEST WEBSERVICE
+	GET - browser
+	POST - POSTMAN
+	
+	
+	
+	
+Rest as the webservice framwork
+JSON as the data format framework
+
+Microservice - Rest Over JSON
+
+
+Complex JSON 2 Java conversion  example
+{
+	"customer":
+		{
+			"name":"john",
+			"age":12
+		},
+	"address":{
+		"city":"ny",
+		"zip":12345
+	}
+}	
+public class EntireInput{
+	CustomerInput customer;
+	AddressInput address;
+	// get set method
+}
+public class CustomerInput{
+	String Name;
+	int age;
+	// get set methods
+}
+
+public class AddressInput{
+	String city;
+	int zip;
+	// get set methods
+}
+
+create webservice that take a number(simple input)
+output is 
+	square of the number
+	cube of the number
+	area of circle
+
+input 5
+output JSON (producing complex output)
+{
+	"square":25
+	"cube":125,
+	"areOfCircle":78.123
+}
+
+public class JSONNumberOutput{
+	int square;
+	int cube;
+	float areaOfCircle;
+	// get set methods
+	
+}
+
+Popular Microservice implementation
+	Rest webservice that CONSUME/takes input as  JSON
+	Rest webservice that PRODUCES/returns output as  JSON
+
+
+
+
+	public int areaOfRect( int length, int breadth) {
+		int area= length * breadth;
+		return area;
+	}
+
+
+Soap : Dotnet, Java, php
+
+WSDL : webservice Description language
+wisdal
+	is an xml file
+	this file describes about your webservice 
+	( IN PLATFORM NEUTRAL DESCRIPTION LANGUAGE)
+		What is the webservice URL
+		what are the features/operations in the webservice
+		what is the input and output from each operation
+
+
+How to create soap webservice
+	top-down approach - Expert programmer (Spring webservice)
+		1) Manually create wsdl file
+		2) generate java program from wsdl file
+	bottom-up approach - Apache CXF framework
+		annotation based soap webservice development
+		1) create java program 
+		2) link the program to a http url
+			endpoint configuration
+		3) wsdl file is automatically created from java program
+
+
+wsdl file can contain XSD link
+
+XSD = Xml Schema Definiation
+	Purpose of this file is validation
+	VALIDATE if customer sent mandatory inputs or not
+	
+	
+Application.properties = configure rest webservice port
+Endpoint.publish= configure soap webservice port
+
+
+80 is default http port
+	dont have to mention in the url
+	
+	
+	schema used for validation
+	
+	RPC
+	
+DOCUMENT LITERAL	: 
+	DOES NOT WORK IF 2 METHODS HAVE SAME INPUT
+<types> 
+	<schema> 
+		<element name="xElement" type="xsd:int"/> 
+		<element name="yElement" type="xsd:int"/> 
+	</schema> 
+</types> 
+DOCUMENT LITERAL WRAPPED : INCLUDES OPERATION NAMES
+	DOES NOT WORK FOR OVERLOADED METHODS
+	ADD 2,3,4
+<types> 
+	<schema> 
+		<element name="add"> 
+			<complexType> 
+				<sequence> 
+				<element name="x" type="xsd:int"/> 
+				<element name="y" type="xsd:int"/> 
+				</sequence> 
+			</complexType> 
+		</element> 
+		<element name="addResponse"> 
+		<complexType/> 
+		</element> 
+	</schema> 
+</types
+
+
+
+
+Rest webservice Data conversion ( Spring Rest Webservice Framework  = @RestController)
+	JSON to JAVA 	& 	JAVA to JSON = JACKSON library
+
+
+Soap webservice Data conversion ( Apache CXF = @WebService)
+	XML to JAVA 	& 	JAVA to XML = JAXB library (JAva Xml Binding)
+
+
+PUBLISHING Services
+	Rest webservice :
+		Get : input is part of URL
+			path based input : http://localhost/add/25/45 (input is not tagged)
+			query based input : http://localhost/add?number1=25&number2=45
+		
+		Post : complex input... input is part of BODY
+			receive complex JSON input
+			
+		Rest webservice that can return complex JSON output
+
+	Soap webservice : deals with xml only.
+		Post : 
+		
+CONSUMING services
+	*********Get : input is part of URL*********
+			path based input : http://localhost/rectangle/10/20 (input is not tagged)
+			query based input : http://localhostcalSI?p=1000&t=30&r=5
+		What is the webservice url
+		what is the input required in url
+			http://localhost/rectangle/10/20
+		what is the output from webservice
+			integer
+			
+
+		RestTemplate rectangle=new RestTemplate(); // Rest stub program
+		int res=rectangle.getForObject("http://localhost/rectangle/10/20", Integer.class);
+		System.out.println("area of rectangle is :"+res);
+
+					
+		RestTemplate calSI=new RestTemplate(); // Rest stub program
+		int res=calSI.getForObject("http://localhost/calSI?p=1000&t=30&r=5", Integer.class);
+		System.out.println("simple interest is :"+res);
+
+	*********Post : complex input... input is part of BODY*********
+		receive complex JSON input			
+
+		What is the webservice url
+			http://localhost/calSimpleInterest
+		what is the input required in url
+			{
+				"principal":100000,
+				"time":30,
+				"rate":5
+			}
+		what is the output from webservice
+			integer
+			
+		Create java program that is JSON input compliant
+		public class WSClientSimplInterest{
+			int principal=100000;
+			int time=30;
+			int rate=5;
+			// get set methods
+		}
+			RestTemplate calPostSI=new RestTemplate(); // Rest stub program
+			WSClientSimplInterest myInput=new WSClientSimplInterest();
+			int res=calPostSI.postForObject("http://localhost/calSimpleInterest",  myInput , Integer.class);
+			System.out.println("simple interest is :"+res);
+		
+			
+		int res=calPostSI.postForObject("http://localhost/calSimpleInterest",  myInput , Integer.class);
+		int res=calSI.getForObject("http://localhost/calSI?p=1000&t=30&r=5", Integer.class);
+						
+
+		*********Complex JSON output*********
+		
+		What is the webservice url
+		what is the input required in url
+			http://localhost/multiOutput/5
+		what is the output from webservice
+			{
+			    "square": 25,
+			    "cube": 125,
+			    "areaOfCircle": 78.53981633974483
+			}
+			
+			
+		public class ComplexOutputJson{
+			int square;
+			int cube;
+			double areaOfCircle;
+			//get set methods
+		}
+		RestTemplate multiOp=new RestTemplate(); // Rest stub program
+		ComplexOutputJson res=multiOp.getForObject("http://localhost/multiOutput/5", ComplexOutputJson.class);
+		System.out.println("mutli output is :"+res);
+	
+			
+			
+			
+wsdl file = documentation / description of soap webservice
+
+Swagger = documentation tool for Rest webservice
+
+*********** apache log4j *****
+
+sysout - log write information
+	limitation :
+	1) printed messages are temproary : john login failed message
+		might get deleted
+	2) when message was printed : john login attempt time cannot 
+		be matched
+	3) where message was printed from : which program printed
+		this message can tell what was the problem in the program
+	4) cannot control when to print and when not to
+	
+	
+6/21 5 pm ; test.java line 24 ; john tried to login
+6/21 5 pm ; test.java line 25 ; , john didnt enter correct password and failed to login
+6/21 6 pm ; test.java line 34 ; john succesfully logged in 
+
+Production support = help fix customer issues
+john call tech support = login problem
+	tech support = 
+		what is ur userid ? john
+		what is ur acct # ? 123
+		what is the problem ? i could not login on your website
+		when did this happen ? 6/21 , 5 pm
+	tech support will send above infor to the programmer
+			
+			
+Log 4j : can print message on console as well as on a permanent
+	file in hard-drive
+
+pattern : how to print message
+	time .... program.... message
+
+%d{yyyy-MM-dd HH:mm} %-5p %c{1}:%L - %m%n
+2022-06-21 17:37 RestService.java:45 - john login failed 
+john login failed 
+
+
+
+log4j.appender.file.File=D:\\logs\\service.log
+log4j.appender.file.MaxFileSize=1MB
+log4j.appender.file.MaxBackupIndex=10
+
+print all messages permanently in location : d:/logs/service.log
+maximum size of 1 mb
+d:/logs/service.log = brand plain empty new file
+d:/logs/service.log.1
+d:/logs/service.log.2 = old file
+d:/logs/service.log.3
+....
+d:/logs/service.log.10
+
+
+
+log mode
+all < debug < info < warn < error < none
+
+
+********************* STRUT ***********************
+
+MVC : decoupled architecture
+
+Car : decoupled
+	Steering >>> Engine >>>> wheel
+	REPAIR-FIX issue : flat tire
+
+	Steering >>> Engine >>>> sports wheel
+	UPGRADE
+	
+	
+STRUTS - MVC framework : reduce your work
+framework : this is a pre-defined working prototype
+Ikea furntiure :
+	dinning table set : framework how to build a table
+		all parts... instructions... 
+		
+		
+Configuration
+	1) xxxAplication.java - include strutsPreapreAndExecute Filter bean
+	2) pom.xml - include struts dependancy
+	3) create struts.xml in src/main/resource folder
+	
+	
+	
+	
+design login webpage that allows customer with userid java and password jee
+	if customer enters wrong userid/pwd = show failure.html
+	if customer enters correct userid/pwd = show success.html
+	
+View layer program : customer can see these programs on browser
+	login.html
+	success.html
+	failure.html
+
+Model layer program : business logic of the company
+	this is the java program that compares what customer typed with
+	userid java and password jee
+	
+Controller layer program : Connects View with Model
+	this is the struts.xml configuration
+	
+	
+	
+How did the customer input on webpage
+get transferreed into model java program
+1) customer type john/john1!
+2) upon click of submit button control
+goes to struts.xml..
+browser send action name login11 to struts.xml
+3) struts.xml will look... which prgram is responsible
+for login11 (com.strut.Login)
+4) strut framework will transfer all the data
+from customers text box into similar looking
+variable in java program
+5) struts.xml knows which method can actually
+compare userid and password
+
+
+1) FROM View TO Controller
+	form action="VALUE" in html 
+	should MATCH
+	<action name="VALUE" in struts.xml
+2) FROM Controller TO Model 
+	<action class="com.strut.Login"
+	Model program name should be fully qualified name
+	package name . class name
+	method="xyz" should MATCH method name in model program
+3) FROM View to Model data transfer
+	<input name="userid" in html
+	should MATCH
+	String userid; in java program
+	along with get/set method
+4) MODEL program methods rules
+	no parameter
+	return type always String	
+5) FROM Model TO Controller
+	Model program returned value should match result attribute in xml
+	return "good"; // model program
+	<result name="good">success.html</result>
+	
+	
+Action program :
+	Form bean 
+		bean : java variable with get/set method
+		form : reference to html code
+	Business method
+		business logic written in method
+		
+		
+Servlet response = Strut Response
+	webpage
+		forward : if target webpage is inside our project ( default )
+		redirect : if target webpage is outside our project
+	non-webpage response
+		text
+		binary
+			set text/binary response in inputStream variable in java program
+			in struts.xml result type="stream"
+		json
+			result type="json"
+			strut framework looks for all get methods in model java program
+			these variable are sent back along with values in json response
+		
+		
+Framework project setup		
+	1) create project as shown in jee class begining
+	2) copy all dependencies from trainer fraemwork project into your new framework project
+	3) go to src/main/resources/application.properties
+		configure the database details ( refere trainer project application.properties)
 	
