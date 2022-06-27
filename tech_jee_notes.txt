@@ -2771,6 +2771,7 @@ public boolean transferMoney(String toAccount,int amount){
 }
 
 ASPECT PROGRAM
+@aspect
 public void aspectCommonCode(){
 	
 	// logging
@@ -2807,10 +2808,12 @@ annotation = configuration
 	mention these package names in component scan
 	
 	
-Spring annotation
-	@configuration
+Spring annotation : below annotation mark program as Spring Program
+1) package name of below programs should be mentioned in the ComponentScan
+2) while using one of the spring programs NEVER create object yourself... instead use @Autowired
+	@configuration : object creation , configured bean
 	@component
-		@controller = 
+		@controller =  java program are LINKED to a http url
 			@RestController
 				Associate HTTP url to a program
 				converting json String to java object
@@ -2847,13 +2850,15 @@ Dependancy injection
 	
 	
 parent interface ICar
-child	Nissan
-child Toyota
+child	class Nissan
+child class Toyota
 
 @Autowired = spring framework create object
-ICar ic;
+ICar ic=new Toyota();
 
+Controller : View layer controller
 
+RestController : webservice layer controller
 
 ******* spring aspects **********
 package com.amazon.shopping;
@@ -3084,6 +3089,69 @@ Browser on click of submit button
 	success
 	
 	
+	
+	
+configuration
+	xml
+	annotation
+	
+Controller : configuration to point HTTP url to JAVA program
+
+	Struts : xml configuration 
+		in struts.xml
+	Servlet : annotation configuration 
+		@WebServlet
+	Controller : annotation configuration
+		@RequestMapping
+	RestController : annotation configuration
+		@RequestMapping
+		
+Selenium, soap ui, postman, junit	
+	
+	
+	
+JDBC : (Java DataBase Connectivity API) lot of coding to CRUD
+JPA : (Java Persistent API) coding for crud is pre-defined
+
+
+************ spring data ***********
+
+setup
+1) Main program XXXXXApplication.java include entityscan and enablejparepository
+2) application.properties file include database settings
+3) pom.xml include spring data dependency
+	spring-boot-starter-data-jpa and mysql
+4) Create your 
+	Entity  : for your database table mapping
+	Repository : CRUD operation on above entity/table 
+	
+	
+	table Profile
+		Userid, (columns)
+		password (columns)
+	
+	java ProfileEntity
+		String uid; (variables)
+		String pwd; (variables)
+		
+	JPQL : Java Persistent Query Language (written with reference to Java entity program)
+		select * from ProfileEntity where uid='john' and pwd='john1!';
+	
+	SQL : Structured Query Language (written with reference to Database table and columns)
+		select * from Profile where userid='john' and password='john1!';
+		
+	Struts/Spring/Springdata	
+	
+Webpage
+	login.html/ register.jsp / delete.jsp
+Struts
+	login.java
+Aspect
+	ProfileAspect.java
+Spring
+	loginBean.java
+Springdata
+	UserRepository.java
 	
 	
 	
