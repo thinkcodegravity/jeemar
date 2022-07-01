@@ -1,3 +1,70 @@
+Cloud companies : AWS/Google cloud, Microst Azure
+	Internet based Software
+		Buy Laptop
+		invest software Operating system
+		invest anti-virus
+		invest website software (java , database s/w)
+		invest in electricity 
+		invest in internet service
+		invest in AC 
+		invest regular upgrade
+		
+		write website program (.war executable website file)
+		
+Hotel service : 
+	NO invest building house
+	NO invest electriity
+	NO invest cleaning
+	NO invest internet
+	NO invest phone
+	
+	Pay as per usage basis : 
+	
+	
+Cloud server - remote machine
+
+Remote control software : logon the remote machine, u can install, delete, create files
+	putty : windows users trying to control remote Unix machine
+	Terminal : mac users trying to control remote Unix machine
+
+File Upload software : upload files from your machine to a remove machine
+	winscp : Upload files from Windows laptop to Unix laptop
+	Terminal : Upload files from mac laptop to Unix laptop
+
+development : on our laptop... 
+	Winscp/Terminal : to upload our website software onto aws unix machine
+	Putty/Terminal : logon remote aws unix machine, run commands that can restart our website
+	
+	
+
+Local machine : Laptop that is used for programming/development
+Internet facing machine (production machine): AWS machine... upload website s/w ... website will be live on internet.
+
+Software development : 2-4 weeks
+
+	Development : programming on Eclipse/spring tool suite
+	Testing : local/development testing
+		start website locally on STS/Eclipse.. by clicking green play button.
+		webpage programs
+			browser : localhost and test your code changes
+		controller programs : any Java program changes
+			junit testing
+	Build : it will package the entire website project files into single executable file (WAR... Web ARchive)
+	Deploy : uploading website programs onto internet facing machine (AWS remote machine)
+	launch/release  : restart your website...
+		shutdown website that was running older website programs
+		start website with latest website programs that was uploaded in deploy steps
+	Testing : production testing
+		changes we tested in local machine... test it with your internet facing machine
+		webpage programs
+			browser : aws machine host name and test your code changes
+			ec2-asdasd.aws.com
+		
+
+
+
+
+
 internet - network of computers (global) billions
 	wireless - internet cell phone ( Roaming network )
 		phone - cell tower - satalites - cell tower - phone
