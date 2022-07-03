@@ -3224,3 +3224,43 @@ Springdata
 	
 	
 	
+Configuration : store constant/Fixed/static information about your project
+XML 
+<project>
+	<companyName>amazon</companyName>
+	<databaseIP>localhost</databaseIP>
+	<databaseUserid>root</databaseUserid>
+	<databasePassword>root</databasePassword>
+	<paypal>
+		<webservice>http://www.paypal.com/paymentWebService</webservice>
+		<userid>javatraining</userid>
+		<password>javatraining1!</password>
+	</paypal>
+</project>
+
+Properties : key value pair , simple configuration
+	companyName=test
+	databaseIP=123.123.1.1
+	databaseUserid=root
+	databasePassword=root
+
+Yaml : 
+	profile:dev
+		companyName:test
+		databaseIP:localhost
+		databaseUserid:root
+		databasePassword:root
+		paypal:
+			webservice:http://www.paypal.com/paymentWebService</webservice>
+			userid:javatraining
+			password:javatraining1!
+	profile:prod
+		companyName:Amazon
+		databaseIP:123.123.1.1
+		databaseUserid:prodUserid
+		databasePassword:asdasdqwsd2@
+		paypal:
+			webservice:http://www.paypal.com/paymentWebService</webservice>
+			userid:javatraining
+			password:javatraining1!
+			
