@@ -91,3 +91,19 @@ https://www.facebook.com/
 
 port :// ipaddress
 21221 1232:1111:1232:1111:1232:1111:1232:1111
+
+
+network commands
+
+	ipconfig : what is ip of your machine
+	netstat -a : network statistics
+		my laptop 12344      www.google.com 443
+	ping : if remote machine is reachable and time taken to travel btw your machine and remote m/c
+		hello command
+	telnet : if remote machine is readable
+	tracert : find the delay in the journey.. traffic jam/ block between your m/c and remote m/c
+
+
+WebServer S/w : programs that will enable a web interaction
+
+
