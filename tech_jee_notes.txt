@@ -107,3 +107,155 @@ network commands
 WebServer S/w : programs that will enable a web interaction
 
 
+
+Event listeners :
+	keyboard : types
+	mouse : click, mouse movement
+	document : webpage ( open , close, resize
+
+
+variable
+function/method
+object data type
+operators
+control flow
+exception handling
+
+************** HTML / CSS/ Javascript / Java integration *******************
+
+Html element attributes 
+	class : integrate with CSS program
+		Css program provides layout , styling, color settings for html web page
+	id : integrate with Javascript program
+		Javascript program does pre-validation. validate if the user has entered
+		proper information on the webpage before final processing.
+		
+		document.getElementById("userid").value
+	name : integrate with Java program
+		Java program does final processing.. to check if login credentials are correct,
+		registration, check out is processed etc.
+		
+		
+************** HTML - Javascript / Java transfer control *******************
+
+	Event listeners : transfer control from html to javascript 
+		Keyboard : type
+			onkeypress
+			onkeyup
+			onkeydown
+		mouse : move mouse or click
+			onclick
+			onmouseover
+			onmouseout
+		document(html) : activate a section of html, change values, webpage open/close
+			onfocus : activate html element by clicking on it
+			onblur : upon losing focus from html element
+			onchange
+	submit button click / ajax : transfer control from html to java
+	
+***************** Jquery ***********************
+
+upgrade / advanced version of javascript
+
+javascript - tightly coupled
+		html program is depended on javascript
+			needs to know , what event to be tracked
+			needs to know, what function to be called
+
+		animation 
+		
+		accessing element not easy
+
+
+javascript - jquery,angular, bootstrap frameowrk
+java - collection framework
+
+Settings :
+	1) html code include import jquery script 
+	2) prepare document.ready function to track all events from javascript
+
+
+
+
+<div id="parent">
+	<div id="child"> abcd
+		<input type="text" id="uid"></input>
+	</div>
+</div>
+ 
+$("#uid").parent().parent()
+
+Overloaded
+
+	Read information if no input passed in below methods
+		$("#child").html() : will return html code inside child div
+
+		$("#child").text() : will return non-html only text inside child div
+			abcd
+
+		$("#uid").val() : will return Customer typed value on webpage
+			
+			
+	Write information into below methods
+		$("#child").html("<div></div>") : 
+		$("#child").text("xyz") : 
+		$("#uid").val("please enter") : 
+			
+
+
+
+
+
+************ on click of button **************
+
+1) gather txxt box name and pair it with customer typed value
+	uid=john
+2) if multiple text box in same page.. they are separeted by &
+	uid=john&pwd=john123
+
+
+if name attribute is missing... customer entered info on webpage 
+CANNOT be transferred to java program for processing
+
+
+
+
+info is transferred from customer's home/browser  to your website machine
+as key-value pair
+
+
+sometime information transferred can be complex
+
+
+
+Java Script Object Notation
+	String verision of javascript object
+	
+	
+Javascript object 
+	var student={
+		name:"jane",
+		grade:1,
+		school:"ABC school"
+	}
+
+
+JSON object
+	var student={
+		"name":"jane",
+		"grade":1,
+		"school":"ABC school"
+	}
+
+userid=john
+address=123 asdad aqwewqe asdsad qweqweq 12345
+JSON used for Represents complex data that will be transferred between client and server
+var address={
+	"streetNumber":123,
+	"streetName": "asdad aqwewqe",
+	"city": "asdsad",
+	"state": "qweqweq",
+	"zip":12345,
+	"longLat":123.123,
+	"active":true
+}

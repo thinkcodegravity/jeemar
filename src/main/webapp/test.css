@@ -1,3 +1,6 @@
+.uidTextBox{
+	background:yellow;
+}
 #wholePage{
 	height:100%;
 	
@@ -21,12 +24,20 @@ input{
 	height:70%;
 	width:100%;
 	background:yellow;	
-}
 
+}
+#footer:hover{
+	color:red;
+}
 #footer{
 	height:10%;
 	width:100%;
 	background:#4A235A;	
+	font-size:30;
+	color:yellow;
+	font-family:verdana;
+	text-align: right;
+
 }
 #filter{
 	height:99%;
@@ -41,7 +52,12 @@ input{
 	background:white;		
 	float:left;
 }
+#productDisplay:hover{
+	transform:rotate(90deg); 
+	transition-duration: 15s;
+}
 #productDisplay{
+	
 	float:left;
 	background:green;
 	height:150px;
@@ -49,4 +65,5 @@ input{
 	margin:10px;
 	padding-left:15px;
 	padding-top:30px;
+	border-radius:10px;
 }

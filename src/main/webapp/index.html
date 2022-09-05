@@ -1,22 +1,27 @@
 <html>
 	<body>
 		<link href="test.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="test.js"></script>
+		
 		</link>
 		<div id="wholePage">
 			<div class="header1 header2">
-				<form action="">
+				<form action="/authenticate">
 					 <table>				
 						<tr>			
 							<td>	userid	</td>
-							<td>	<input type="text"  name="userid" id="userid"   />	</td>
+							<td>	<input  type="text"  name="uid" id="userid" class="uidTextBox"   />	</td>
+							
 						</tr>			
 						<tr>			
 							<td>	password	</td>
-							<td>	<input type="password"  name="pass" id="pass"  />	</td>
+							<td>	<input type="text" id="pass"  />	</td>
+							
 						</tr>			
 						<tr>			
 							<td>		</td>
-							<td>	<input type="submit" value="login" />	</td>
+							<td>	<input type="submit" value="login" id="loginButton"/>	</td>
 						</tr>			
 					</table>				
 				</form>
@@ -76,6 +81,7 @@
 
 			</div>
 			<div id="footer">
+				THIS IS JEE WEBSITE TRAINING
 			</div>
 			
 		</div>
