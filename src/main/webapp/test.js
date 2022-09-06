@@ -221,8 +221,8 @@ function manipulateDom(){
 }
 $(document).ready(function() {
 		$("#pass").click ( testingpwd );
-		$("#userid").blur( checkLoginInfo );
-		$("#pass").blur( checkLoginInfo );
+	//	$("#userid").blur( checkLoginInfo );
+		//$("#pass").blur( checkLoginInfo );
 });
 
 function checkLoginInfo(){

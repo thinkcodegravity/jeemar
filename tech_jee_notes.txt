@@ -259,3 +259,29 @@ var address={
 	"longLat":123.123,
 	"active":true
 }
+
+*************** http ***********
+
+Hyper-Text transfer protocol
+
+
+status code : transfer status
+	2XX : successfull transfer
+	3XX : redirect succesfull transfer
+	4XX : Client(source) problem
+			un-authorized
+			invalid address
+	5XX : Server(destination) problem
+	
+Http : stateless protocol
+	http cannot remember state of conversation
+	
+*************** servlet **********
+
+configuration
+1) springbootapplication program (hint : ends with name XXXXXApplication.java)
+	@ServletComponentScan
+2) pom.xml add servlet dependancy
+
+
+
