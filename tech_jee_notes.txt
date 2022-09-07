@@ -284,4 +284,39 @@ configuration
 2) pom.xml add servlet dependancy
 
 
+Servlet : server side java program... processes customer request
+
+
+Java
+
+
+TestTest t=new TestTest();
+
+
+
+Servlet
+	init : write any code here, if you want to do something when the 
+		object is created for this first time
+	service : NEVER touch this method
+		decide when to call doGet or doPost
+	doGet - mandatory
+	doPost - mandatory
+	destroy - servlet object is destroyed.. it is called when website is shutdown
+	
+	
+
+server-side java program Response ;
+	Webpage response :
+		forward : desitnation webpage is in the same project or m/c
+		redirect : desitnation webpage is external to this project
+	
+	Non-Webpage response :
+		Text : chatting window
+			return String to customer
+		non-text : streaming
+			return bytes to customer
+		
+		
+		
+
 
