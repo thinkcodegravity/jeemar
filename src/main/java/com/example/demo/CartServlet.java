@@ -13,16 +13,28 @@ import javax.servlet.http.HttpSession;
 public class CartServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-
-		HttpSession session=req.getSession();
-		session.invalidate();
-		if(session.getAttribute("cart") == null )
-			session.setAttribute("cart", new ArrayList<String> ());
+		HttpSession sess=req.getSession();
+		sess.invalidate();
 		
-		ArrayList<String> products=(ArrayList<String> )session.getAttribute("cart");
+		if(sess.getAttribute("cart") == null )
+		{
+			// if cart entry does not exist in session
+			// create brand new empty arraylist
+			// in session table make an entry for
+			// "cart" and new arraylist
+			ArrayList<String> products=new ArrayList<String> ();
+			sess.setAttribute("cart", products);
+		}
+		sess.setAttribute("login", true);
+		sess.setAttribute("name", "john");
+		sess.setAttribute("age", 10);
+		
+		
+		// get access to the arraylist in the cart
+		ArrayList<String> existingProducts=(ArrayList<String> )sess.getAttribute("cart");
 		String prd=req.getParameter("productName");
-		products.add(prd);
-		res.getWriter().write(products.toString());
+		existingProducts.add(prd);
+		res.getWriter().write(existingProducts.toString());
 			
 	}
 
