@@ -319,4 +319,237 @@ server-side java program Response ;
 		
 		
 
+WSDL :
+	Webservice Description Language
+	
+common programming community terms
+	method : operation
+	input : arguments
+	
+Writing soap webservice
+	1) Top down approach
+		create wsdl file first
+		generate java program that matches wsdl xml
+	2) Bottom up approach
+		Create java program first
+		wsdl auto generated from java program
+			xml configured
+			annotation configured = Apache CXF
+	
+Bottom up approach , using annotation
+	1) write simple program
+	2) @WebService - soap annotation
+	3) host the webservice program on http url
+	
 
+schema :
+	validation purposes
+
+
+RPC style : simple, faster soap webservice (light weight)
+	data type : simple input
+	peroformance: faster, no validation, wsdl is simple so less processing overhead
+	validation : not available(no schema)
+	
+Document style : complex data, slower(heavy weight)
+	data type: complex input data ( arraylist, complex user defined data type)
+	validation : schema is available
+	performance : slower
+	
+	
+publish/provide soap based webservice
+consume/use soap based webservice
+
+publish/provide rest based webservice
+consume/use rest based webservice
+
+	
+Rest Webservice
+	Microservice architecture
+		small related services packaged in a different project
+		
+	Implmeneted
+		Rest webservice using JSON
+		
+	http://localhost/login?password=adsasd&userid=asdsadasd	
+		
+	http://localhost/add/10/20
+	service name : add
+	input : /10/20
+********* path get input ********
+	// mapping : establishing a link/map/connection between http url and method
+	@RequestMapping(value = "/add/{a}/{b}", method = RequestMethod.GET)
+	public int addition(int a, int b ){
+		int sum=a+b;
+		return sum;
+	}
+********* key-value get input ********
+	http://localhost/sub?number1=40&number2=10
+	@RequestMapping(value = "/sub", method = RequestMethod.GET)
+	public int substract(@RequestParam int number1,@RequestParam int number2){
+		int subs=number1-number2;
+		return subs;
+	}
+	
+********* complex output ********	
+	http://localhost/allMath/10/40
+	input : simple.. in url.... GET
+	output : complex json
+	{
+		"sum":60,
+		"sub":40,
+		"mul" :500,
+		"div":5
+	}
+	
+	1) create JSON compliant java program for the above complex output
+	
+	public class ComplexOutput{
+		int sum=60;
+		int sub=40;
+		int mul=500;
+		int div=5;
+		// get and set method
+	}
+	
+	2) create rest webservice
+	http://localhost/allMath/50/10
+	@RequestMapping(value = "/allMath/{a}/{b}", method = RequestMethod.GET,
+	 produces = MediaType.APPLICATION_JSON_VALUE
+	)
+	public ComplexOutput allMathOperations(int a, int b ){
+		ComplexOutput result=new ComplexOutput ();
+		result.sum=a+b;
+		result.sub=a-b;
+		result.mul=a*b;
+		result.div=a/b;
+		return result;
+	}
+	
+	Jackson Mapper
+		Output customr need is JSON
+		Java objects into JSON data conversion ( produces=json)
+			get method from java program to transfer into json
+			read value from java and update in json data
+		Input customer sent is JSON
+		JSON data into Java object conversion (consumes=json)
+			read value from json data and update (set) in java variable
+********** complex input ****
+http://localhost/simpleInterest
+input :
+	{
+		"principal":100000,
+		"time":60,
+		"rate":5
+	}
+
+output :
+	int : 300000
+	
+	1) json compliant java program for complex data
+		public class SimpleInterestInput{
+			int principal;
+			int time;
+			int rate;
+			// get set method (encapsulation methods)
+		}
+	2) create program
+	@RequestMapping(value = "/simpleInt", method = RequestMethod.POST,
+	 consumes = MediaType.APPLICATION_JSON_VALUE
+	)
+	public int calculateSimpleInterest(@RequestBody  SimpleInterestInput  si){
+		int result= si.principal * si.time * si.rate / 100;
+		return result;
+	}
+	
+http url
+input
+output
+
+Get
+	Http url + input : http://localhost/add/10/20
+	output : 30
+int res=getClient.getForObject("http://localhost/add/10/30", 
+						Integer.class);
+			
+Post
+	http url : http://localhost/simpleInt
+	input : { "principal":200000, "time":120, "rate":2 }
+	output : 30
+SimpleInterestInput si=new SimpleInterestInput ();
+	si.principal=200000; si.time=120; si.rate=2;
+int res=getClient.postForObject("http://localhost/simpleInt", 
+					si
+					, Integer.class);
+					
+					
+					
+					
+					
+Publish :
+	soap : @webservice
+	rest : @restcontroller
+	
+	
+Consume :
+	soap : create stub program
+	rest : Use RestTemplate program
+	
+WSDL : describing(documenting) soap webservice
+Swagger : document and testing rest webservice
+	
+	
+*********** Spring framework *****************
+
+framework : proven solution to a known problem
+
+architecture design
+
+IOC and AOP
+
+Dependancy injection : IOC - Inversion Of Control
+	create/initialize and managing object given/outsourced to spring framework
+Aspect Oriented Programming
+
+	Dependancy : (HAS-A) relation btw 2 programs
+		**** Global instance variables of a program**** 
+			
+		public class Car{
+			has-a
+				IEngine v8=new IEngine(); // reverse the control, 
+				Wheel
+		}
+		Car is depended on Engine
+		Car is depended on Wheel
+
+	Injection : is a process of initializing global variable
+		=new Engine();
+
+		public class Iphone{
+			has-a
+				Screen screen=new Screen();
+				SmartPhone sp=new SmartPhone();
+				Chip c;// outsource production of chip Intel or AMD
+		}
+	Icar ic=new Icar();// Icar is interface/incomplete program... cannot say new on incomplete program
+	Icar ic=new Nissan();
+	
+	public interface Icar{
+		public void drive();
+	}
+	
+	public class Nissan implements ICar{
+		public void drive(){
+			syssout("driving");
+		}
+	}
+
+Spring framework - Dependancy Injection
+How to Create dependancy (initialize problem)
+	1) new operator doesnt always work directly. due to complex input in constructor
+		new Calculator();
+	2) new operator doesnt work on interface/abstract programs
+	
+Managing dependancy	
+	
+	
