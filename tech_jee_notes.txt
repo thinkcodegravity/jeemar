@@ -553,3 +553,102 @@ How to Create dependancy (initialize problem)
 Managing dependancy	
 	
 	
+	
+AOP : Aspect Oriented Programming
+	Allows programmer to separate Non-core busniess logic code from business logic code.
+	cross-cutting concern : Non-business logic code but they are necessary to run website
+	successfully
+public boolean login(String userid, String password){
+	// logging - debug, production support
+	sysout( customer John tried to login );
+	// security code
+	if(userid == mike || userid==andy) // blocked users
+		return false;
+	// performance code 
+	long startTime=System.currentTimeInMilliSec(); // 8:22:10
+	//execption code
+	try{
+		// code for comparing userid and password (business logic)
+	}catch(Exception e){
+		sysout("we are expericning tech prob. please try again later");
+	}
+	long stopTime=System.currentTimeInMilliSec(); // // 8:22:16
+	long totalTime=stopTime-startTime; // 6 seconds
+}
+
+public boolean transferMoney(int acct, int amount){
+	// logging - debug, production support
+	sysout( customer is trying to transfer 100$ );
+	// security code
+	if(userid == mike || userid==andy) // blocked users
+		return false;
+	// performance code 
+	long startTime=System.currentTimeInMilliSec(); // 8:22:10
+	//execption code
+	try{
+		// code for transfering money (business logic)
+	}catch(Exception e){
+		sysout("we are expericning tech prob. please try again later");
+	}
+	long stopTime=System.currentTimeInMilliSec(); // // 8:22:16
+	long totalTime=stopTime-startTime; // 6 seconds
+}
+
+
+
+public boolean shopping(int acct, int amount){
+	// logging - debug, production support
+	sysout( customer is trying to transfer 100$ );
+	// security code
+	if(userid == mike || userid==andy) // blocked users
+		return false;
+	// performance code 
+	long startTime=System.currentTimeInMilliSec(); // 8:22:10
+	//execption code
+	try{
+		// code for transfering money (business logic)
+	}catch(Exception e){
+		sysout("we are expericning tech prob. please try again later");
+	}
+	long stopTime=System.currentTimeInMilliSec(); // // 8:22:16
+	long totalTime=stopTime-startTime; // 6 seconds
+}
+
+
+public boolean add2Cart(int acct, int amount){
+	// logging - debug, production support
+	sysout( customer is trying to transfer 100$ );
+	// security code
+	if(userid == mike || userid==andy) // blocked users
+		return false;
+	// performance code 
+	long startTime=System.currentTimeInMilliSec(); // 8:22:10
+	//execption code
+	try{
+		// code for add2Cart (business logic)
+		}catch(Exception e){
+		sysout("we are expericning tech prob. please try again later");
+	}
+	long stopTime=System.currentTimeInMilliSec(); // // 8:22:16
+	long totalTime=stopTime-startTime; // 6 seconds
+
+}
+
+
+
+************* settings *******************
+1) pom.xml = include dependancy, springdata, tomcat-jasper,mysql,aspects
+	Maven - projectsetup, packaging software
+	include all technology and framework software into your project
+2) create packages for controller, aspect, service, repository
+	create view folder in src/main/webapp directory
+3) in Main program.. XXXXXXApplication.java add 
+loads and manages for all spring programs.. in order to do that it requires to know
+the location of these program
+	@componentscan - package names where all spring framework progams exists
+		programs with @component, controller, restcontroller, service,repository,configuration
+	@entityscan - package names where all @Entity programs are stored
+	@enablejparepositories - package names where @repositores programs are store
+4) src/main/resources/application.properties file
+	add database details - spring.datasource etc
+	add spring mvc details - spring.view etc
