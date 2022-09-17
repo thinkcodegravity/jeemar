@@ -636,10 +636,31 @@ public boolean add2Cart(int acct, int amount){
 
 
 
+********** spring data ************
+
+public  List<UsersEntity> findByAddress(String address);
+		public List<UsersEntity> findByFirstNameAndLastName(String fName,String lName);	
+		public List<UsersEntity> findByAddressAndLastName(String a,String l);
+		public List<UsersEntity> findByUid(String users);
+		
+		// JPQL
+		@Query("SELECT u FROM UsersEntity u WHERE u.uid= ?1 and u.pwd=?2")
+		public List<UsersEntity> verify(String users,String password);
+		//SQL
+		@Query(value="SELECT * FROM users WHERE userid= ?1 and password=?2",nativeQuery = true)
+		public List<UsersEntity> nativeVerify(String users,String password);
+
+	
+	
+	
+
+
 ************* settings *******************
 1) pom.xml = include dependancy, springdata, tomcat-jasper,mysql,aspects
 	Maven - projectsetup, packaging software
 	include all technology and framework software into your project
+	Copy and replace from my springsetup project to your project the following
+	in pom.xml  <dependancy> ..... </dependancy>
 2) create packages for controller, aspect, service, repository
 	create view folder in src/main/webapp directory
 3) in Main program.. XXXXXXApplication.java add 
@@ -652,3 +673,5 @@ the location of these program
 4) src/main/resources/application.properties file
 	add database details - spring.datasource etc
 	add spring mvc details - spring.view etc
+
+	
