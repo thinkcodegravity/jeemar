@@ -1,69 +1,37 @@
-.uidTextBox{
+#wholepage{
+	height:100%;	
+	width:100%;	
 	background:yellow;
-}
-#wholePage{
-	height:100%;
-	
-	width:100%;
-	
-	background:grey;
 } 
-input{
-	background:yellow;
-}
-.header1{
-	height:20%;
-	width:100%;
-}
-.header2
-{
-	background:#7D3C98;
+
+#logo{
+	height:20%;	
+	width:100%;	
+	background:#3374FF;
 }
 
 #body{
-	height:70%;
-	width:100%;
-	background:yellow;	
-
-}
-#footer:hover{
-	color:red;
+	height:70%;	
+	width:100%;	
+	background:green;
 }
 #footer{
-	height:10%;
-	width:100%;
-	background:#4A235A;	
-	font-size:30;
-	color:yellow;
-	font-family:verdana;
-	text-align: right;
-
-}
-#filter{
-	height:99%;
-	width:9%;
-	background:#C39BD3;	
-	float:left;
-	border-style:dashed;
-}
-#mainContent{
-	height:100%;
-	width:90%;
-	background:white;		
-	float:left;
-}
-#productDisplay:hover{
-	transform:rotate(90deg); 
-	transition-duration: 15s;
-}
-#productDisplay{
+	height:10%;	
+	width:100%;	
+	background:#11234B;
 	
+}
+
+#filter{
+	height:100%;	
+	width:10%;	
+	background:white;
 	float:left;
-	background:green;
-	height:150px;
-	width:150px;
-	margin:10px;
-	padding-left:15px;
-	padding-top:30px;
-	border-radius:10px;
+}
+
+#productDisplay{
+	height:100%;	
+	width:90%;	
+	background:#C1D3FA;
+	float:left;
 }
