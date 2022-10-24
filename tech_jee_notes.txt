@@ -6,28 +6,41 @@ internet - network of device (global) billions
 intranet - closed network , corporate, educational, organization ( 1000 or millions)
 LAN - home network
 
-ip - identify a specific device out of BILLIONs of devices connected to internet
-	IPv4 = IP version 4
-	X.X.X.X = 256 x 256 x 256 x 256 = 4 billion unique numbers
-	X = 0-255 ( 256 possibility)
-	12.	34.	215.	189
-	0.0.0.0
-	255.255.255.255
-	
-	quare, pentagon(5), hexagon (6)septa oct
-	
-	Hexa decimal - 0-9 or A-F
-		1276A23B32F
-	decimal = 0-9
-		1238912371
-	binary = 1/0
-		10111011010
-		
-	IPv6 = IP version 6 - 32 digit 
-	xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
-	x= 0-9 and A-f - 16 possibility 32 = Trillions and trillions
-	02A7:3C29:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
-	
+Internet Protocol Address
+IPv4 - version 4
+X.X.X.X = 4 billion unique ip address
+256 x 256 x 256 x 256
+0-255
+123.33.78.223
+0.0.0.0
+0.0.0.1
+0.0.0.2
+...
+255.255.255.255
+
+6 billion - using internet = 2 devices per person
+atleast 12 billlion devices connected to internet
+NEED atleast 12 billion ip address
+
+binary = 1 or 0 (2 possible digits)
+decimal = 0-9 (10 possible digits)
+Hexa decimal = 0-9 or A-F (16 possible characters)
+
+IPv6
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+x = hexa decimal = 0-9
+3AD8:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+
+trillions of possible ip address
+
+***********************************
+DEVICES ON INTERNET COMMUNICATE BY
+IP AND PORT
+IP : differntiate 1 device from another out of billions of devices
+Port : differentiate 1 app from another on a given device
+***********************************
+
+
 WAN IP : ip assigned to device that are directly connected to internet
 LAN IP : ip assigned to device that are connected to internet service device such as ROUTER
 
@@ -103,23 +116,50 @@ network commands
 	telnet : if remote machine is readable
 	tracert : find the delay in the journey.. traffic jam/ block between your m/c and remote m/c
 
+************** spring boot project *************
 
-WebServer S/w : programs that will enable a web interaction
+website project setup structure
+Testing setup
+additional software included (maven dependancy)
+embedded web server ( tomcat ) 
+packaging : all the website code are packaged in single executable setup file
+	WAR : Web ARchive
+	
+******************* XML **********************
 
+Extensible Markup Language - Tag data 
+Meta-data = Information about the data 
 
+qweqwe asdasdas wqweq wqeqwe asdasdad qwe 1231221 12
 
-Event listeners :
-	keyboard : types
-	mouse : click, mouse movement
-	document : webpage ( open , close, resize
+<address>
+	<Street>
+		<streetName>qweqwe asdasdas</streetName>
+		<streetNumber>1234</streetNumber>
+	</Street>
+	<building>wqweq</building>
+	<city>wqeqwe </city>
+	<state>asdasdad</state>
+	<country>qwe</country>
+	<zip>12</zip>
+	<phone>1231221</phone>
+</address>
 
-
-variable
-function/method
-object data type
-operators
-control flow
-exception handling
+Tags : boundary of the data .. delimiter
+	opening tag = <>
+	closing tag = </>
+Elements - street element
+	Root element : only 1 root element
+	Parent element
+	child elemeent
+	sibling elements
+Value : non-element data inside opening and closing tag
+	hello is the value of xyz element
+	
+<abc>	<pqr></pqr>	</abc>	
+<xyz>	hello			</xyz>		
+	
+Attributes : indivisible data with key-value pair
 
 ************** HTML / CSS/ Javascript / Java integration *******************
 
