@@ -5,5 +5,7 @@ public class Accountant {
 		Calculator c=new Calculator ();
 		// consuming service
 		c.add(10, 20);
+		int x=10;
+		
 	}
 }
