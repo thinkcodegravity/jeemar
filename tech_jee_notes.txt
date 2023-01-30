@@ -16,3 +16,70 @@ Java - (Core java)
 		webservice framework
 	mobile app development : J2ME
 	desktop app development : AWT
+	
+	
+Internet
+	network of devices
+	wireline : home network
+		router/modem
+	wireless : cell data plan
+		satellite
+		
+	router
+	intranet
+	lan
+	
+	wan
+	
+	
+	IPAddress = Internet Protocol Address
+	unique identifier for every device connected to internet
+	
+	IPv4 = IP version 4
+	X.X.X.X
+	
+	X = 0-255
+	
+	123.34.22.225
+	0.0.0.0
+	0.0.0.1
+	0.0.0.2
+	.......
+	255.255.255.255
+	
+	Total range of IP address : 256 x 256 x 256 x 256 = 4 billion ip address
+	
+	8 billion people = 5 billion users
+	1-3 atleast
+	2 devices per person X 5 billion  = 10 billion devices connected the internet
+	
+	
+	
+	IPv6 = IP version 6
+	
+	xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+	
+	x= hexa decimal... 0-9 and A-F
+	1A37:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+	
+	range of ipv6 addresss= trillions ip address
+	
+	
+	
+wireless
+wireline
+wifi
+internet
+intranet
+lan
+domainname
+DHCP
+DNS
+LAN ip
+WAN ip
+ipv4
+ipv6
+router
+port
+m/c security
+firewall
