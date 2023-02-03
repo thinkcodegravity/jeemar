@@ -1,4 +1,4 @@
-Jee - website
+ Jee - website
 	Java installed (1.8)
 	Spring tool suite - development
 		pre-installed with all the softwares necessary for spring framework/webservice etc
@@ -83,3 +83,73 @@ router
 port
 m/c security
 firewall
+
+
+ipconfig : ipaddress of your machine
+ping : remote machine is reachable
+telnet
+tracert
+
+
+xml and jira
+
+XML : Extensible Markup Language
+HTML : HyperText Markup Language
+SGML
+WML
+
+Meta-Data
+Information about Data
+
+john qwewqe 123 qewqeqwe 213123 awdawe adada
+jane asdsadd 345 adqweqew 213121 adwqqq asdsad
+
+john qwewqe asdsad 123 qewqeqwe 213123 awdawe adada
+
+mark / tag 
+
+<name>john</name> 
+<bldgName>qwewqe</bldgName>
+<bldgNum>123</bldgNum> 
+<city>qewqeqwe</city> 
+<zip>213123</zip> 
+<state>awdawe</state> 
+<country>adada</country>
+
+<name> = name tag or name element
+	<name> = opening tag
+	</name> = closing tag
+opening and closing tags - boundary
+<name>john</name> 
+
+
+<address>
+	<customer age="10" >
+		<name>
+			<firstname>john</firstname>
+			<lastname>doe</lastname>
+		</name> 
+		<bldgName>qwewqe</bldgName>
+		<bldgNum>123</bldgNum> 
+	</customer>
+	<customer>
+		<name>jane</name> 
+		<bldgName>asdsa</bldgName>
+		<bldgNum>456</bldgNum> 
+	</customer>
+</address>
+
+
+<address> = root element / root tag ( overview of data stored in this file )
+nested element : element inside element 
+Parent element : Customer is parent element of name,bldgName,bldgNum
+Child element : Customer  is child element of address
+Silbling element: name and bldgName are sibling element
+
+value = information between opening and closing tag
+
+attributes : simple key value pair
+
+elements and attributes
+	elements contain sub information (object or complex data type)
+	attributes single value information (primitive or simple data type)
