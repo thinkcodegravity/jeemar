@@ -155,3 +155,107 @@ elements and attributes
 	attributes single value information (primitive or simple data type)
 
 
+
+
+Java variables
+	String name="john";
+	int age=10;
+	float weight=100.23;
+	boolean active=true;
+Javascript variables
+	var name="john";
+	var age=10;
+	var weight=100.23;
+	var active=true;
+Java method
+	int result=addition(10,20); 
+	
+	public int addition(int a, int b){
+		int sum=a+b;
+		return sum;
+	}
+Javascript method
+	var result=addition(10,20); 
+	
+	function  addition( a,  b){
+		var sum=a+b;
+		return sum;
+	}	
+
+	
+java and javascript opertor
+	var multiply= a * b; // arithmetic operator
+	var x=10;
+	var y=10;
+	var z=20;
+	x==y  // true // equality operator
+	x!=z   // true
+	
+	// relational operator
+	x > y // false
+	
+	// incerement operator
+	
+	// conditional operator
+	x==y && x>z
+	true && false
+	false
+	
+java and javascript control flow
+var a=10;
+var b=20;
+
+if( a == b)
+	console.log(" a is equal to b");
+else
+	console.log(" a is not equal to b");
+
+for(var i=0 ; i < 3 ; i++)
+	console.log("hi");
+
+var checkout=false;
+while(checkout == true)
+	console.log("order is placed");
+
+do-while
+switch case
+
+
+	var student={
+		name:"jane",
+		grade:1,
+		school:"ABC school",
+		getGrade(){
+			return this.grade;
+		},
+		sub(a,b){
+			return a-b;
+		}
+	}
+console.log(student.name);
+var gr=student.getGrade();
+	
+	
+public class Student{
+		String name="jane";
+		int grade=1;
+		String school="ABC school";
+		public int getGrade(){
+			return this.grade;
+		}
+		public int sub(int a,int b){
+			return a-b;
+		}
+}
+Student st=new Student();
+sysout(   st.name );
+int stugrade=st.getGrade();
+
+
+event listeners :
+	mouse : click, move
+	keyboard : typing
+	webpage/dcoument : open, close, scroll 
+	
+Javascript monitors customer activity
+by above even listeneres

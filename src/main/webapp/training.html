@@ -1,7 +1,8 @@
 <html>
 	<body>
-		<link href="training.css" rel="stylesheet" type="text/css">
-			
+		<link href="training.css" rel="stylesheet" type="text/css"></link>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script src="test.js"></script>	
 
 		<div id="wholepage">
 			<div class="header1 header2">
@@ -9,15 +10,20 @@
 					<table>				
 						<tr>			
 							<td>	Userid</td>
-							<td>	<input type="text"></input>	</td>
+							<td>	
+							<input 
+							onclick="useridClicked()" 
+							onkeypress="useridTyped()" 
+							onmouseover="useridMouse()"
+							id="username" type="text"></input>	</td>
 						</tr>			
 						<tr>			
 							<td>	Password</td>
-							<td>	<input type="password"></input>	</td>
+							<td>	<input id="pass" type="password"></input>	</td>
 						</tr>			
 						<tr>			
 							<td>	</td>
-							<td>	<input type="submit" value="login"></input>	</td>
+							<td>	<input type="submit" onclick="return validateUseridPass()" value="login"></input>	</td>
 						</tr>			
 					</table>				
 
