@@ -4,11 +4,29 @@ var d=10.0;
 var e="john";
 var f='a';
 test();
+function passClick(){
+// READ what customer typed in username text box
+	var user=$("#username").val();
+	if( user ==""  ){
+	// WRITE a message in username text box
+		$("#username").val("please type here");
+		$("#login").slideUp(5000);
+		document.getElementById("username").style="background:red";
+	}
+	else
+		$("#login").slideDown(5000);
+}
 function validateUseridPass(){
-	var u=document.getElementById("username").value;
-	var p=document.getElementById("pass").value;
-	if( u == "" || p==""){
-		alert("userid and password are mandatory");
+	var user=document.getElementById("username").value;
+	var pas=document.getElementById("pass").value;
+	if( user == ""  ){
+		alert("userid is mandatory");
+		document.getElementById("username").style="background:red";
+		return false;
+	}
+	else if( pas ==""){
+		alert("password is mandatory");
+		document.getElementById("pass").style="background:red";
 		return false;
 	}
 	else
@@ -132,4 +150,13 @@ function checkUserAjax (){
 }
 $(document).ready(function() {
 	
+	$("#pass").click(passClick);
+	$("#pass").mouseenter(passMouseEnter);
+	$("#pass").mouseleave(passMouseExit);
 });
+function passMouseEnter(){
+$("#pass").css("background","red");
+}
+function passMouseExit(){
+$("#pass").css("background","green");
+}

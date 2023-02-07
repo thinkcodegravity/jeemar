@@ -259,3 +259,41 @@ event listeners :
 	
 Javascript monitors customer activity
 by above even listeneres
+
+
+
+********************************* JQUERY *******************************************************
+what did customer type in username textbox
+	javascript code
+		var user=document.getElementById("username").value;
+	jquery code
+		var user=$("#username").val();	
+		
+	1) short hand version of javascript code 
+	2) decouple architecture
+		together = separated
+		allows to separate javascript code from Html code
+	3) multiple options to identify html code
+	4) animation
+	
+<div id="code1">
+	<div id="code2">abcd</div>
+	<div id="code3">abcd</div>
+</div>
+
+$("#code1").child()
+	
+$("#code2").text() = read value between 
+	code2 opening and closing tag
+	abcd = the text in code2 eleemnt
+$("#code1").html() = read html code in div code1
+	<div id="code2">abcd</div> = html code inside code1
+	
+	if no input.... READ
+	$("#username").val();
+	if input... WRITE
+	$("#username").val( "abcd" );
+	
+	
+	
+	

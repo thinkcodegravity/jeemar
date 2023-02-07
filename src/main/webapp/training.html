@@ -6,24 +6,20 @@
 
 		<div id="wholepage">
 			<div class="header1 header2">
-				<form action="">
+				<form action="authentication">
 					<table>				
 						<tr>			
 							<td>	Userid</td>
 							<td>	
-							<input 
-							onclick="useridClicked()" 
-							onkeypress="useridTyped()" 
-							onmouseover="useridMouse()"
-							id="username" type="text"></input>	</td>
+							<input  id="username" name="username" type="text"></input>	</td>
 						</tr>			
 						<tr>			
 							<td>	Password</td>
-							<td>	<input id="pass" type="password"></input>	</td>
+							<td>	<input id="pass" class="pwd" name="pass" type="password"></input>	</td>
 						</tr>			
 						<tr>			
 							<td>	</td>
-							<td>	<input type="submit" onclick="return validateUseridPass()" value="login"></input>	</td>
+							<td>	<input id="login" type="submit" onclick="return validateUseridPass()" value="login"></input>	</td>
 						</tr>			
 					</table>				
 

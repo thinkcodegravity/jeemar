@@ -15,16 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet  extends HttpServlet {
 	
 		public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-			if(req.getRemoteAddr().equals("1.2.3.4"))
-			{
-				res.getWriter().write("you are blocked");
-				return;
-			}
-				
-			String content=req.getHeader("content-type");
-			//HttpServletRequest : access all customer data
-			//HttpServletResponse : send response to customer
-			String u =req.getParameter("uid");
+			String u =req.getParameter("username");
 			String p=req.getParameter("pass");
 			if(u.equals("john") && p.equals("john1!"))
 				res.getWriter().write("welcome john");
