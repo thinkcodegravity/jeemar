@@ -11,27 +11,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// Connects the html buttons/submits to this program.. 
+// using form action <form action="authentication">
 @WebServlet("/authentication")
+
+// customer is communicating over the interent
+// customer is transporting data over the internet using
+// transporation software = HTTP
+// this program should support HTTP transportation software
 public class LoginServlet  extends HttpServlet {
 	
+		// HTTP is 2 way communication..
+		// Request : data transferrd from CLIENT to SERVER 
+		// Response : data transfered back from SERVER to CLIENT
 		public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-			String u =req.getParameter("username");
-			String p=req.getParameter("pass");
-			if(u.equals("john") && p.equals("john1!"))
-				res.getWriter().write("welcome john");
-			else if(u.equals("jane") && p.equals("jane1!"))
-			{
-				byte[] binaryResponse="qweqwe".getBytes();
-				res.getOutputStream().write(binaryResponse);
-			}
-			else if(u.equals("java") && p.equals("jee"))
-				req.getRequestDispatcher("welcome.html").forward(req, res);
-			else
-				res.sendRedirect("https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=SignUp");
-			
+			System.out.println(" in get");
 		}
+		// 2 main ways of transporting data
+		// Get - text data, limited size, not safe, faster
+		// Post - any digital data, unlimited size, safe, slower
 		public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-			doGet(req,res);
+			System.out.println(" in post");
 		}
 
 	}

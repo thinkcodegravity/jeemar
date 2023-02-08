@@ -297,3 +297,12 @@ $("#code1").html() = read html code in div code1
 	
 	
 	
+
+
+Web server : web software that enables http software hosted on internet
+	Tomcat,weblgoic,websphere,jboss,glasssfish - Http Web Server Software
+			SMTP web server softwar
+			FTP web server software
+			
+
+Servlet : java program that processes customer request
