@@ -306,3 +306,12 @@ Web server : web software that enables http software hosted on internet
 			
 
 Servlet : java program that processes customer request
+
+
+http://amazon.com/login?userid=john&pwd=john1!
+query string = part of url that appears afte the question mark
+
+req.getQuerystring()
+	userid=john&pwd=john1!
+req.getParameter("userid")
+	john
