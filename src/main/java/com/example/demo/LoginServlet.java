@@ -48,7 +48,7 @@ public class LoginServlet  extends HttpServlet {
 				// forward
 			if(uid.equals("john") &&pwd.equals("john1!"))
 			{
-				req.getRequestDispatcher("welcome.html").forward(req, res);
+				req.getRequestDispatcher("welcome.jsp").forward(req, res);
 			}
 			else
 				res.sendRedirect("https://accounts.google.com/signup");

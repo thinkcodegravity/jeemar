@@ -315,3 +315,17 @@ req.getQuerystring()
 	userid=john&pwd=john1!
 req.getParameter("userid")
 	john
+	
+	
+DDL query - Data Definition Language
+	create/delete/modify table
+DML query - Data Manipulation Language
+	create/update/delete/read records in the table
+	
+create table customers(
+	userid varchar(64),
+	password varchar(64),
+	address varchar(64),
+	primary key (userid) 
+	
+)
