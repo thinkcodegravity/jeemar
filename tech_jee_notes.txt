@@ -329,3 +329,18 @@ create table customers(
 	primary key (userid) 
 	
 )
+
+Expedia >>>>>>>>>>>>>>> SouthWest
+String source=ny			var 
+String destn=ca
+
+xml, json,key-value pair
+
+http://www.amazon.com/shopping.html
+NO Get - part of url
+<GiveFlightDetails><source>ny</source><destination>ca</destination></GiveFlightDetails>
+{
+	"source":"ny",
+	"dest":"ca"
+}
+source=ny&dest=ca
