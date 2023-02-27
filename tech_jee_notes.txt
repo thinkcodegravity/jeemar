@@ -334,6 +334,21 @@ Expedia >>>>>>>>>>>>>>> SouthWest
 String source=ny			var 
 String destn=ca
 
+Server side java program
+
+java program - that customer can access by typing URL
+
+Customer >>> Http URL >>>>> Server side java program
+
+http://www.amazon.com
+
+http://www.amazon.com/login
+Servlet - @WebServlet("/login")
+
+Rest webservice - @RestController
+
+Soap webservice
+
 xml, json,key-value pair
 
 http://www.amazon.com/shopping.html
@@ -344,3 +359,319 @@ NO Get - part of url
 	"dest":"ca"
 }
 source=ny&dest=ca
+
+Simple input format
+	http://www.aa.com/flights2/NY/Chicago
+	http://www.aa.com/flights2?source=NY&destination=Chicago
+Complex input format
+	http://www.aa.com/flights2/
+	
+xml and json
+	source ny
+	desitnation chicago
+	departure time 12/31
+	passenger details
+		passenger1
+			name
+			age
+			seat
+		passenger2
+			name
+			age
+			seat
+
+
+<flightDetails>
+	<source> ny</source>
+	<desitnation> chicago<desitnation> 
+	<departure time> 12/31<departure time> 
+	<passenger details>
+		<passenger1>
+			<name><name>
+			<age><age>
+			<seat><seat>
+			<nickName>
+				<name>john</name>
+				<name>j</name>
+				<name>johnny</name>
+			</nickName>
+		<passenger1>
+		<passenger2>
+			<name><name>
+			<age><age>
+			<seat><seat>
+		<passenger2>			
+	<passenger details>
+</flightDetails>
+
+JavaScript Object Notation
+{	
+	"source" : "ny",
+	"desitnation" : "chicago",
+	"departure time" : "12/31",
+	"passengerdetails":{
+		"passenger1" : {
+			"name" :"john",
+			"age" : 21,
+			"seat" : "1A",
+			"weight" : 150.1,
+			"rewardsCustomer":true,
+			"nickNames" : [ "john","j","johnny"   ]
+			} ,
+		"passenger2" :{
+			"name": "jane",
+			"age": 20,
+			"seat": "1B",
+			"weight" : 100.1,
+			"rewardsCustomer":true
+			}
+	}
+}
+1) attribute double quoted like string
+2) attribute and value are separated by :
+3) multiple attribute-value pair are separated by ,
+4) value can be any data... String , int , fraction, boolean, complex value - {} , array
+
+
+
+Rest webservice with JSON
+	POST input choice
+	/ny/chicago
+	?src=ny&dest=chicago
+	{
+		"firstName": "john",
+		"lastName": "doe",
+		"passportNum": 123456,
+		"passportExpiryMonth": 12,
+		"passportExpiryYear": 2028,
+	}
+	
+	@RequestMapping(value = "/passportInfo", 
+			method = RequestMethod.POST,
+			consumes = MediaType.APPLICATION_JSON_VALUE
+			)
+			public String booking(@RequestBody  PassportInfo  pi){
+		
+	
+		
+	{
+		"firstName": "john",
+		"lastName": "doe",
+		"passportNum": 123456,
+		"passportExpiryMonth": 12,
+		"passportExpiryYear": 2028,
+	}
+	
+	Convert JSON input into Java class/object
+	JSON mapper - jackson
+
+	// passportinfo java program REPRESNTING the above json data
+	public class PassportInfo{
+		String firstName; // setFirstName = set is used to store values , get is used to read value
+		String lastName;
+		int passportNum;
+		int passportExpiryMonth;
+		int passportExpiryYear;
+	}
+	
+	input = webservice recieve/consume data
+	output = webservice return/produce data
+	
+Rest webservice with JSON
+	output is complex
+	
+	http://localhost/getFlightDetails/ny/chicago
+
+	{
+		"airline":"AA123",
+		"departureAirport":"JFK",
+		"arrivalAirport":"Ohare",
+		"departureTime":"6:00 am",
+		"arrivalTime":"7:00 am",
+		"seatAvailable":3
+	}
+
+	public class FlightDetails{
+		String airline;
+		String departureAirport;
+		String arrivalAirport;
+		String departureTime;
+		String arrivalTime;
+		int seatAvailable;
+	}
+	
+	Flight Detail webservice
+4 services
+1) give input /flights/ny/chicago
+2)
+
+documentation
+
+how to use webservice
+how many service u have
+what does each service do
+what input is needed
+what output can be expected
+
+Rest with json
+Json
+postman
+
+Swagger
+
+Webservice documentation tool
+1) include swagger dependancy in pom.xml
+2) include swagger program in project
+3) in swagger program mention the package names (where all webservice are located)
+
+http://website.com/swagger-ui.html
+
+SOAP
+
+soap development  - 
+	Top-down approach : Expert programmers
+		1) create WSDL file manually
+		2) generate java program from wsdl
+			wsdl2java
+		3) logic in java program
+	
+	Bottom-Up approach 
+		1) create java program with logic
+		2) WSDL file created auto
+		
+		configuration can be xml or annotation(Apache CXF framework)
+		
+Bottom-up approach
+create
+	1) write simple java code
+	2) tag/mark this program as soap webservice @WebService
+	3) expose/publish this soap program to the internet
+		via http url
+	
+	
+	
+Soap UI
+
+SOAP input
+SOAP output
+
+WSDL : WebService Description Language
+	xml file that explains/describes the webservice in platform
+	neutral language
+
+SOAP transaction type
+	RPC : simple webservice (faster)
+		primitive data type or string
+		NO validation - NO XSD schema included
+		
+	Document : complex webservice (slower)
+		complex object, collection, array
+		validation - XSD schema included
+	
+validation are driven by xsd xml file
+	xml schema definition
+	
+	input is mandatory
+	input should be integer
+
+JAXB
+	Convert XML to Java
+	Convert Java to XMl
+	
+	
+Rest webservice
+	get = http://localhost/add/10/20
+		Testing software - BROWSER
+	post = http://localhost/add
+		body : { "input1":10, "input2":20}
+		Testing software - POSTMAN
+		
+Soap webservice
+	http://localhost:9090/soapcalculaotr
+		Testing software - SOAP UI
+		
+*********************** Spring framework *********************** 
+
+Framework : Proven solution to a known problem 
+
+Jee frameworks : Struts , Spring, Hibernate, Logging, webservice
+
+Spring Framework :Framework of frameworks
+	IOC Inversion Of Control / DI Dependancy Injection
+	AOP Aspect Oriented Programming
+
+
+1) copy all the dependancies from pom.xml
+2) application.properties - configure
+		Spring ui (webpage configuration)
+			prefix = /view/
+			suffix = .jsp
+		
+		under webapp
+			/view/success.jsp
+			/view/error.jsp
+
+		Spring data(database configuration)
+3) configure main java program
+	xxxxxxApplication.java
+		configure @ComponentScan... name of the packages where spring program exists
+
+
+Registration example
+
+
+
+
+
+************8 aspect
+execution ( int com.amazon.login.Authentication.*(String) )
+	target extra code to a specific method
+within(com..*) 
+	extra code to all methods ,in all the class in entire package
+Bean(*Manager)	
+	extra code applies to all method in the spring bean programs
+	that end with name Manager
+
+execution ( int com.amazon.login.Authentication.*(String) )
+	||
+execution ( boolean com.amazon.login.Authentication.*(String,String) )	
+	extra code applies to any method in Authentication program
+	that has
+	int as return type and 1 string input
+	OR
+	boolean as return type and 2 string input
+
+
+
+
+Read a record from database 
+
+1) findBy
+List<userEntity> findByEmAndPwd(String a,String b);	
+
+2) jpql query 
+jpql	java persistent query language		
+@Query("select u from UserEntity u where u.em=?1 and u.pwd=?2")			
+List<userEntity>		jpqlEmPwd(String a,String b);	
+
+3) SQL	Structured query language		
+@Query(value="select * from users where email=?1 and password=?2", nativeQuery=true)			
+List<userEntity> sqlEmPwd(String a,String b);
+
+
+
+
+read records - give group of records.... group of entity objects
+findBy
+
+sqlEmPwd("john@g.com","john123");
+sqlEmPwd("jane@g.com","jane1233");
+
+
+Static binding - fixed input query
+select * from users where email='john@g.com' and password='john123'
+
+Dynamic binding - variable input in query
+
+******************************* log4j *******************************
+

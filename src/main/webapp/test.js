@@ -4,8 +4,11 @@ var d=10.0;
 var e="john";
 var f='a';
 test();
-
+var x=aa/bb;
+	
 function passClick(){
+
+
 // READ what customer typed in username text box
 	var user=$("#username").val();
 	if( user ==""  ){
