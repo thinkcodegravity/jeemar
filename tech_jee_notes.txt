@@ -675,3 +675,45 @@ Dynamic binding - variable input in query
 
 ******************************* log4j *******************************
 
+log book - record
+
+What is logging - information printed on file or console
+
+What info is printed in logging - information about website software, information about your customer
+	tomat started the website
+	ORM for database
+	customer john is trying to pay the bill
+	customer john payment was declined due to insuff balance
+
+Why logging - website monitoring, software monitoring, Production support
+	tomcat server crashed due to high traffic
+	ORM failed due to database shutdown
+
+logging - 
+	System.out.print -
+		drawback sysout
+		1) no timestamp printed - product support focus on 1 out of 1000 attempts when error happned
+		2) No program or line number tracing - pin point the source of the problem
+		3) temprory - server restart will loose all messages from console
+		4) cannot control which message to print
+		customer john had a error
+		
+	log4j
+		1) no timestamp printed - product support focus on 1 out of 1000 attempts when error happned
+		2) No program or line number tracing - pin point the source of the problem
+		3) temprory - server restart will loose all messages from console
+			allows to print in permanaent file on hard drive AND console
+		2023-02-24 09:36 INFO AreaCalcualtor:35 - customer john had a error 
+
+
+DEBUG - finding the issue/problem
+	Frontend debug - HTML, CSS, Javascript (customer browser)
+		javascript - browser console
+		HTML/css - browser source
+		
+	Network debug
+		browser insepect > network tab > 4XX 5XX
+	
+	Backend debug - Java program (website machine)
+		look at exceptions in console or log4j files
+	
