@@ -3,12 +3,32 @@
 	width:100%;	
 	background:yellow;
 } 
-
+#prod{
+	height:200px;
+	width:200px;
+	float:right;
+	background:green;
+	margin-left:10px;
+	padding-left:50px;
+	padding-top:50px;
+	 
+}
 #logo{
 	height:20%;	
 	width:100%;	
-	background:#3374FF;
+	background:red;
+	font-size:25;
+	color:black;
+	font-family:verdana;
+text-align: center;
+ 
 }
+#logo:hover{
+	
+	border-style: solid;
+	background:orange;
+}
+
 
 #body{
 	height:70%;	
@@ -34,4 +54,5 @@
 	width:90%;	
 	background:#C1D3FA;
 	float:left;
+	
 }
