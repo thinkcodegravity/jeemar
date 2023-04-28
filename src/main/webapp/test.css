@@ -1,58 +1,36 @@
 #wholepage{
 	height:100%;	
 	width:100%;	
-	background:yellow;
 } 
-#prod{
-	height:200px;
-	width:200px;
-	float:right;
-	background:green;
-	margin-left:10px;
-	padding-left:50px;
-	padding-top:50px;
-	 
-}
-#logo{
-	height:20%;	
+#header{
+	height:10%;	
 	width:100%;	
-	background:red;
-	font-size:25;
-	color:black;
-	font-family:verdana;
-text-align: center;
- 
+	background:#239B56 ;
 }
-#logo:hover{
-	
-	border-style: solid;
-	background:orange;
+#popularlinks{
+	height:10%;	
+	width:100%;	
+	background:#58D68D;
 }
-
-
-#body{
+#productDisplay{
 	height:70%;	
 	width:100%;	
-	background:green;
+	background:white;
 }
 #footer{
 	height:10%;	
 	width:100%;	
-	background:#11234B;
-	
+	background:#145A32;
 }
-
 #filter{
 	height:100%;	
 	width:10%;	
-	background:white;
+	background:#E8F6F3;
 	float:left;
 }
-
-#productDisplay{
+#products{
 	height:100%;	
 	width:90%;	
-	background:#C1D3FA;
+	background:white;
 	float:left;
-	
 }

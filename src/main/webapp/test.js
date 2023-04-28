@@ -4,28 +4,37 @@ var d=10.0;
 var e="john";
 var f='a';
 test();
-var x=aa/bb;
-	
-function passClick(){
 
-
-// READ what customer typed in username text box
-	var user=$("#username").val();
-	if( user ==""  ){
-	// WRITE a message in username text box
-		$("#username").val("please type here");
-		$("#login").slideUp(5000);
+function validateUseridPass(){
+	var user=$("#username").val(); // READING what customer typed in userid text box
+	var pas=$("#pass").val();
+	if( user == ""  ){
+		$("#username").val("please type the userid");// this message will be WRITTEN in userid text box
+		alert("userid is mandatory");
 		document.getElementById("username").style="background:red";
+		return false;
+	}
+	else if( pas ==""){
+		$("#pass").val("please type the password");
+		alert("password is mandatory");
+		document.getElementById("pass").style="background:red";
+		return false;
 	}
 	else
-		$("#login").slideDown(5000);
+		return true;
 }
-function validateUseridPass(){
+
+
+function validateUseridPassOld(){
 	var user=document.getElementById("username").value;
+	var user=$("#username").val();
+	
 	var pas=document.getElementById("pass").value;
 	if( user == ""  ){
 		alert("userid is mandatory");
 		document.getElementById("username").style="background:red";
+		$("#username".css("background","red");
+		
 		return false;
 	}
 	else if( pas ==""){
@@ -36,6 +45,35 @@ function validateUseridPass(){
 	else
 		return true;
 }
+
+
+function testingClick(){
+	console.log("i am in javascript program");
+	console.log("this will be printed in browser console");
+}
+
+function add( a, b){
+	var sum=a+b;
+	return sum;
+}
+
+
+	
+function passClick(){
+	console.log("i am in javascript");
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function useridMouse(){
 	console.log("customer placed mouse of userid text box");
 }
@@ -152,15 +190,32 @@ function checkUserAjax (){
 	// javascript object with AJAX property and functions
 	$.ajax(serverCommunicationObject);	
 }
-$(document).ready(function() {
-	
-	$("#pass").click(passClick);
-	$("#pass").mouseenter(passMouseEnter);
-	$("#pass").mouseleave(passMouseExit);
-});
 function passMouseEnter(){
 $("#pass").css("background","red");
 }
 function passMouseExit(){
 $("#pass").css("background","green");
 }
+
+function controlLoginButton(){
+	var user=$("#username").val(); // READING what customer typed in userid text box
+	var pas=$("#pass").val();
+	if( user == ""  )
+	{
+		$("#username").css("background","red");
+		$("#login").slideUp(5000);// 5000 milli sec = 5 sec
+	}
+	else if( pas =="")
+	{
+		$("#pass").css("background","red");
+		$("#login").slideUp(5000);
+	}
+	else
+		$("#login").slideDown(5000);
+	}
+
+$(document).ready(function() {
+	$("#pass").click(passClick);
+	$("#pass").blur(controlLoginButton);
+	 
+});

@@ -717,3 +717,96 @@ DEBUG - finding the issue/problem
 	Backend debug - Java program (website machine)
 		look at exceptions in console or log4j files
 	
+	
+	
+	adsasd asdsa asd asdqwe 123213
+metaverse - 
+XML : meta data ( information about data )
+atomic : indivisible - attribute
+<Address fullName="john doe" age="25">
+	<Street>
+		<StreetName>asdsadasd</StreetName>
+		<StreetNumber>12334</StreetNumber>
+	</Street>
+	<Building>asdsa</Building>
+	<city>asd</city>
+	<state>asdqwe</state>
+	<zip>123213</zip>
+</Address>
+
+Element : <Street>
+	opening tag and closing tag - defines boundary of infrmation
+	<Street>:opening tag
+	</Street>:closing tag
+	
+root element :  <Address>
+parent element : Address is parent elememnt of building
+child eleement : Building is child element of Address
+sibling element : Street and Bulding are sibling elements
+
+
+
+jquery
+setup
+	include below line in html code
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	track all event listeners from java script in				
+		$(document).ready(function() {
+				// write event listeners here
+		});
+
+1) decouple javascript and html code
+2) simplified coding
+3) more event listeners
+4) animation
+
+tightly coupled : html and javascript are linked exclusively
+jquery
+loosely coupled : event listner need not be written
+		in html anymore
+		
+		
+<div id="abc">
+	<div id="pqr"> bye bye </div>
+</div>
+
+$("#pqr").parent()
+
+text
+	$("#pqr").text() =  hello there 
+	$("#pqr").text("bye bye") 
+html
+	$("#abc").html() = <div id="pqr"> hello there </div>
+	$("#abc").html("<input type='text'>")
+	
+val : read or write text in html element
+	overload : same method name and different input
+	val();	// reading what customer typed in text box
+	val("please enter userid here"); // wrting message in text box
+	
+	
+	
+html program :
+	key-value pair
+	
+	key=name attribute of text box
+	value= customer typed in the text box
+	
+wewrewr sccxcvxcxcv
+
+<input  id="username" name="username" type="text"></input>
+<input  id="pass" class="pwd" name="pass" type="password"></input>	
+
+username=john&pass=john1!
+username=john
+pass=john1!
+
+if multiple key-value pair , separates by &
+username=john&pass=john1!
+
+
+
+Front End Developers : Client side programmers (html css js)
+Back End Developers : Server side programmers (java DB)
+Full Stack Developers : html css js java db
+
