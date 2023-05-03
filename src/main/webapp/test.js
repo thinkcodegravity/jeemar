@@ -33,7 +33,7 @@ function validateUseridPassOld(){
 	if( user == ""  ){
 		alert("userid is mandatory");
 		document.getElementById("username").style="background:red";
-		$("#username".css("background","red");
+		$("#username").css("background","red");
 		
 		return false;
 	}
@@ -170,26 +170,7 @@ function validate(){
 		return true; // will make server journey	
 	}
 }
-function checkUserAjax (){
-	var serverCommunicationObject={
-	        url: '/checkUser',
-	        type: 'post',
-	        data: {
-	                  userid:$("#userid").val()
-			},
-	        context: this,
-	        success: function (data) {
-	                  if(data == "unavailable")
-				  			alert("userid already taken");
-	        },
-	        error: function (data) {
-	                  alert("unable to reach server program")
-	        }
-	};
-	// jquery functino .ajax it will accept
-	// javascript object with AJAX property and functions
-	$.ajax(serverCommunicationObject);	
-}
+
 function passMouseEnter(){
 $("#pass").css("background","red");
 }
@@ -213,9 +194,31 @@ function controlLoginButton(){
 	else
 		$("#login").slideDown(5000);
 	}
+function checkUserAjax (){
+	var serverCommunicationObject={
+	        url: '/checkuser',
+	        type: 'post',
+	        data: {
+	                  username:$("#reguid").val()
+			},
+	        context: this,
+	        success: function (data) {
+	                  if(data == "unavailable")
+				  			alert("userid already taken");
+	        },
+	        error: function (data) {
+	                  alert("unable to reach server program")
+	        }
+	};
+	// jquery functino .ajax it will accept
+	// javascript object with AJAX property and functions
+	$.ajax(serverCommunicationObject);	
+}
 
 $(document).ready(function() {
 	$("#pass").click(passClick);
 	$("#pass").blur(controlLoginButton);
+	$("#reguid").blur(checkUserAjax);
+	
 	 
 });

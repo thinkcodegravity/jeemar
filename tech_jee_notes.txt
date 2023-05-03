@@ -810,3 +810,99 @@ Front End Developers : Client side programmers (html css js)
 Back End Developers : Server side programmers (java DB)
 Full Stack Developers : html css js java db
 
+Synchronus communication between client browser - server programs
+	Initiated by customer. Click of a button to submit the webpage typed infromation
+	
+Asynchronius communication between client browser -server java programs
+	NOT initiated by customer.. Customer did not click on any submit button.
+	
+AJAX - Asynch JAvascript XML
+
+XmlHttpRequest = XHR
+
+AJAX javascript object
+
+		url: '/checkuser', // contact server program with name /checkuser
+	        type: 'post',
+	        data: { userid:$("#userid").val() // send information as key-value to java program
+			},
+	        context: this,
+		// received response from website : successfull communication with java program
+	        success: function (data) {
+	                  if(data == "unavailable")
+				  			alert("userid already taken");
+	        },
+		// received response from website : communication with java program FAILED
+	        error: function (data) {
+	                  alert("unable to reach server program")
+	        }
+		
+1) how to contact server program = form action = name/url of the java program
+2) Send informaion from browser to server program = key-value pair 
+3) Receive the response from Java server program
+		
+		
+		Sending data from customer browser to Java program
+
+Key-value pair
+	userid=john&password=john123&phone=123123
+
+Complex data- XML format
+	xml format is complex/cluttered way of represnting complex data
+	address=asdwq qwe wqe ew 123
+	address=<address><street>asdwq</street> <building>qwe</building><city>wqe</city><state>ew</state><zip>123</zip></address>
+
+Complex data- JSON format
+	address=asdwq qwe wqe ew 123
+	
+	
+	
+JSON : Java Script Object Notation
+	String version of Javascript object
+	
+Javascript Object 	
+	var student={
+		name:"jane",
+		grade:1,
+		coord:123.3,
+		open:true,
+		school:"ABC school"
+	}
+JSON Object 	
+	var student={
+		"name":"jane",
+		"grade":1,
+		"coord":123.3,
+		"open":true,
+		"school":"ABC school"
+	}
+	
+	
+	<address>
+		<street>
+			<name>asdwq</name>
+			<number>123</number>
+		</street> 
+		<building>qwe</building>
+		<city>wqe</city>
+		<state>ew</state>
+		<zip>123</zip>
+		<phones>
+			<phone>123</phone>
+			<phone>456</phone>
+			<phone>678</phone>
+		</phones>
+	</address>
+	
+	{
+		"street":{
+			"name":"asdwq",
+			"number":123
+		},
+		"building":"qwe",
+		"city":"wqe",
+		"state":"ew",
+		"zip":123,
+		"phones":[ 123,456,678 ]
+	}
+	
