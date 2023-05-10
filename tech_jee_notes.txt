@@ -906,3 +906,391 @@ JSON Object
 		"phones":[ 123,456,678 ]
 	}
 	
+************** webservices ******************
+
+	
+	
+	
+	swagger
+	include swagger in pom.xml
+	copy paste swagger program in the project
+		update your webservice package name
+		
+	http://localhost/swagger-ui.html
+	
+	SOAP webservice
+	
+		WSDL : Web Service Description Language
+			Schema : input/output details of webservice.
+		Document
+			validation - schema xml included in WSDL
+			complex input - ArrayList, Person
+		RPC
+			NO validation - NO schema xml included in WSDL
+			simple input - int , float , boolean
+		
+	
+	development/Implement soap webservice
+		Top-Down approach ( Expert users )
+			1) manually write the wsdl xml file that has details of webservice
+			2) auto-generate java code from the wsdl... WSDL2Java
+			3) write the logic in java program
+			Spring-webservice framework
+		Bottom-Up approach
+			1) Write java program and its logic
+			2) wsdl file will be to automatically created
+			Apache CXF framework... configured by annotation
+			
+			
+	1) Write your simple java program
+	2) add annotation to mark this program as a soap websrevice program
+	3) associate/link soap java program to a http url
+			
+			
+		JAXB = JAva Xml Binding
+		
+3 parts to a webservice
+
+1) what is the http URL of webservice
+2) what is the input for webservice
+3) what is the output of webservice
+
+GetService
+	1) Http URL and input
+	2) output
+PostService
+	1) Http URL
+	2) input = json... pass json compliant java object
+	3) output
+
+Rest webservice
+	@RestController
+	@RequestMapping
+		method
+		value
+		consumes
+		produces
+
+SoapWebservice
+	@WebService
+	@SOAPBinding
+		RPC
+		Document
+
+RestClient
+	RestTemplate 
+		getForObject
+		postForObject
+
+SoapClient
+	Stub program
+	
+	
+	
+	
+********************* spring framework *********************
+
+framework : proven solution to a known problem
+Spring framwork : well designed architecture for website development
+	Website Architecture
+		VIEW		= webpage/ios/anroid app... visible to customer
+		CONTROLLER	= Controls http URL. in contact with customer's action
+						Controls what customers can see next
+		BUSINESS LOGIC	= Propr/conf/private algorithm
+		DATA ACCESS LAYER = Access to data in external system (Database, another system)
+		
+Spring Framework
+	Dependancy Injection / Inversion Of Control (DI / IOC)
+	
+	
+	Aspect Oriented programming (AOP)
+
+
+	Dependancy Injection / Inversion Of Control (DI / IOC)
+	HAS-A / Global variable
+	
+		Nissan Car 
+			has-a : Wheel ( Nissan is DEPENDED on wheel )
+					Outsource wheel manufacture (ceat/bridgestone/michelin)
+					michelin to provide or create or INJECT wheels in this car
+			has-a : Engine 
+			has-a : Body
+			does  : drive
+			does : start
+			
+		Iphone
+			MicroChip
+				outsource qualcomm, nvidia, intel, amd
+			Smartphone S/w
+			Camera
+				outsource outsource nikkon, panasonic
+			
+		public class Iphone{
+			
+			//dependancy injection
+			// Outsourcing creation of microchip object to
+			// spring framework
+			@Autowired
+			MicroChip mc;// initialize or create object
+			// Iphone is DEPENDED on Microchip
+			// Object creation/INJECTION is done by spring framework
+			
+			
+			Camera cam;
+			smartphoneSw ssw;
+			
+			public void call(){
+			
+			}
+			public void text(){
+			
+			}
+		}
+
+
+Core business logic
+Unrelated non-business logic code - ASPECT code... cross cutting concerns, non business logic code but necessary part of software
+
+website -
+	security
+	exception handling
+	provide service
+	performance check - 2 to 3 seconds
+	logging - production support (trace)
+
+
+Log book- records, notes
+
+
+
+
+Aspect oriented programming - separate non business logic code from business logic code
+public boolean login(String userid,String pwd){
+	// performance check
+	long starttime=System.currentTime; // 10:31:50
+
+	// security
+	if(userid=andy || userid=michael)
+	{
+		// logging
+		sysout("user andy has been blocked, because uploaded illegal video on the website");
+		return false
+	}
+	// exception handling
+	try{
+			if(userid=john and pwd=john1!)
+				return true;
+			else
+				return false;
+	}
+	catch(Exception e){
+		sysout("please try again later, we are facing tech difficulty");
+	}
+	
+	long stopTime=System.currentTime; // 10:31:55
+	long timetaken = stopTime-startTime; // 5 seconds
+}
+
+public boolean register(String userid,String pwd){
+	// performance check
+	long starttime=System.currentTime; // 10:31:50
+
+	// security
+	if(userid=andy || userid=michael)
+	{
+		// logging
+		sysout("user andy has been blocked, because uploaded illegal video on the website");
+		return false
+	}
+	// exception handling
+	try{
+			// REGISTRATION CODE
+	}
+	catch(Exception e){
+		sysout("please try again later, we are facing tech difficulty");
+	}
+	
+	long stopTime=System.currentTime; // 10:31:55
+	long timetaken = stopTime-startTime; // 5 seconds
+}
+
+
+
+
+public boolean payment(String userid,String pwd){
+	// performance check
+	long starttime=System.currentTime; // 10:31:50
+
+	// security
+	if(userid=andy || userid=michael)
+	{
+		// logging
+		sysout("user andy has been blocked, because uploaded illegal video on the website");
+		return false
+	}
+	// exception handling
+	try{
+			// PAYMENT CODE
+	}
+	catch(Exception e){
+		sysout("please try again later, we are facing tech difficulty");
+	}
+	
+	long stopTime=System.currentTime; // 10:31:55
+	long timetaken = stopTime-startTime; // 5 seconds
+}
+
+
+
+public boolean checkout(String userid,String pwd){
+	// performance check
+	long starttime=System.currentTime; // 10:31:50
+
+	// security
+	if(userid=andy || userid=michael)
+	{
+		// logging
+		sysout("user andy has been blocked, because uploaded illegal video on the website");
+		return false
+	}
+	// exception handling
+	try{
+			// CHECKOUT CODE
+	}
+	catch(Exception e){
+		sysout("please try again later, we are facing tech difficulty");
+	}
+	
+	long stopTime=System.currentTime; // 10:31:55
+	long timetaken = stopTime-startTime; // 5 seconds
+}
+
+
+
+public boolean add2Cart(String userid,String pwd){
+	// performance check
+	long starttime=System.currentTime; // 10:31:50
+
+	// security
+	if(userid=andy)
+	{
+		// logging
+		sysout("user andy has been blocked, because uploaded illegal video on the website");
+		return false
+	}
+	// exception handling
+	try{
+			// Add2Cart CODE
+	}
+	catch(Exception e){
+		sysout("please try again later, we are facing tech difficulty");
+	}
+	
+	long stopTime=System.currentTime; // 10:31:55
+	long timetaken = stopTime-startTime; // 5 seconds
+}
+
+public boolean cancelOrder{
+	// performance check
+	long starttime=System.currentTime; // 10:31:50
+
+	// security
+	if(userid=andy)
+	{
+		// logging
+		sysout("user andy has been blocked, because uploaded illegal video on the website");
+		return false
+	}
+	// exception handling
+	try{
+			// Cancel CODE
+	}
+	catch(Exception e){
+		sysout("please try again later, we are facing tech difficulty");
+	}
+	
+	long stopTime=System.currentTime; // 10:31:55
+	long timetaken = stopTime-startTime; // 5 seconds
+	
+}
+
+
+public boolean aspect(String userid,String pwd){
+	// performance check
+	long starttime=System.currentTime; // 10:31:50
+
+	// security
+	if(userid=andy || userid=michael)
+	{
+		// logging
+		sysout("user andy has been blocked, because uploaded illegal video on the website");
+		return false
+	}
+	// exception handling
+	try{
+			
+	}
+	catch(Exception e){
+		sysout("please try again later, we are facing tech difficulty");
+	}
+	
+	long stopTime=System.currentTime; // 10:31:55
+	long timetaken = stopTime-startTime; // 5 seconds
+}
+
+public boolean login(String userid,String pwd){
+	// LOGIN code
+}
+public boolean register(String userid,String pwd){
+	// REGISTRATION CODE
+}
+public boolean payment(String userid,String pwd){
+	// PAYMENT CODE
+}
+public boolean checkout(String userid,String pwd){
+	// CHECKOUT CODE
+}
+public boolean add2Cart(String userid,String pwd){
+	// Add2Cart CODE
+}
+public boolean cancelOrder(String userid,String pwd){
+	// cancl order CODE
+}
+
+
+Website architeture
+Spring framework
+	Dependancy injection
+	Aspect oriented programming
+Configuration
+	POM.xml
+		spring data
+		spring aspects
+	xxxxApplication.java
+		@ComponentScan(package names where spring framework program exists)
+	Application.properties
+		webpage location- prefix and suffix
+			prefix - folder where webpage exist
+			suffix -  webpage file extension
+		database details 
+			which database, where is it installed, what is userid and password
+		
+Spring framewok programs : Any programs that has annotationss
+	@Component
+	@Configuration
+	@Controller
+	@Service
+	@Repository
+	
+	
+Spring MVC framework
+	auth.jsp
+	loginsuccess.jsp
+	loginfailed.jsp
+	@Controller
+	
+	
+	Http : Stateless protocol
+	cannot remember the state of the conversation
+	sessions = allows http program to remember the state
+		of the conversation

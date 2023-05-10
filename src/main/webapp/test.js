@@ -5,6 +5,8 @@ var e="john";
 var f='a';
 test();
 
+
+
 function validateUseridPass(){
 	var user=$("#username").val(); // READING what customer typed in userid text box
 	var pas=$("#pass").val();
